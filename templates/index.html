@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwater Image Enhancement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Image Comparison Slider Component -->
+    <script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@7/dist/styles.css" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-900 text-white font-['Inter'] antialiased" x-data="app()">
+    <script>
+        window.isAuthenticated = {{ 'true' if current_user.is_authenticated else 'false' }};
+    </script>
+
+    <!-- Navbar -->
+    <nav class="border-b border-slate-700 bg-slate-800/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span
+                        class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                        AquaVision AI
+                    </span>
+                </div>
+                <div class="flex items-center gap-6">
+                    {% if current_user.is_authenticated %}
+                    <span class="text-sm text-slate-400 hidden md:block">{{ current_user.email }}</span>
+                    <a href="{{ url_for('logout') }}"
+                        class="text-sm font-medium text-red-400 hover:text-red-300 transition border border-red-500/30 px-3 py-1.5 rounded-lg hover:bg-red-500/10">Logout</a>
+                    {% else %}
+                    <a href="{{ url_for('login') }}"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition">Login</a>
+                    <a href="{{ url_for('register') }}"
+                        class="text-sm font-bold bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg transition shadow-lg shadow-cyan-600/20">Get
+                        Started</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- Hero Section -->
+        <div class="text-center mb-8" x-show="!results">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-2">
+                Reveal the <span class="text-cyan-400">Deep Blue</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+                Advanced underwater image enhancement using DSP filters and Multiscale Fusion.
+                Restore color, contrast, and clarity instantly.
+            </p>
+
+            <!-- Upload Box -->
+            {% if current_user.is_authenticated %}
+            <div class="max-w-lg mx-auto border-2 border-dashed border-slate-600 rounded-2xl p-6 hover:border-cyan-400 hover:bg-slate-800/50 transition cursor-pointer relative"
+                @dragover.prevent="dragover = true" @dragleave.prevent="dragover = false"
+                @drop.prevent="handleDrop($event)" :class="{ 'border-cyan-400 bg-slate-800/50': dragover }">
+                <input type="file" id="fileInput" class="hidden" @change="handleFile($event)" accept="image/*">
+                <label for="fileInput" class="cursor-pointer flex flex-col items-center justify-center">
+                    <svg class="w-10 h-10 text-slate-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                        </path>
+                    </svg>
+                    <span class="text-base font-medium text-slate-200">Click to upload or drag & drop</span>
+                    <span class="text-xs text-slate-500 mt-1">JPG, PNG, BMP supported</span>
+                </label>
+            </div>
+            {% else %}
+            <div class="max-w-lg mx-auto bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl">
+                <div class="flex flex-col items-center gap-4">
+                    <div class="p-3 bg-slate-900 rounded-full">
+                        <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Login Required</h3>
+                    <p class="text-slate-400 text-sm">Please log in to your account to upload and enhance images.</p>
+                    <a href="{{ url_for('login') }}"
+                        class="mt-2 w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-cyan-600/20 text-center">
+                        Login / Register
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Example Comparisons Section -->
+        <div class="mb-10" x-show="!results">
+            <h2 class="text-2xl font-bold text-center mb-6">See the Difference</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Example 1 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
+                    <div class="aspect-square bg-black relative">
+                        <img-comparison-slider class="w-full h-full object-cover focus:outline-none">
+                            <img slot="first" src="/static/images/examples/ex1_before.png"
+                                class="w-full h-full object-cover" />
+                            <img slot="second" src="/static/images/examples/ex1_after.png"
+                                class="w-full h-full object-cover" />
+                        </img-comparison-slider>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Coral Reef Restoration</h3>
+                        <p class="text-slate-400 text-sm">Restores vibrant colors and removes blue haze from coral
+                            ecosystems.</p>
+                    </div>
+                </div>
+
+                <!-- Example 2 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
+                    <div class="aspect-square bg-black relative">
+                        <img-comparison-slider class="w-full h-full object-cover focus:outline-none">
+                            <img slot="first" src="/static/images/examples/ex2_before.png"
+                                class="w-full h-full object-cover" />
+                            <img slot="second" src="/static/images/examples/ex2_after.png"
+                                class="w-full h-full object-cover" />
+                        </img-comparison-slider>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Marine Life Clarity</h3>
+                        <p class="text-slate-400 text-sm">Enhances contrast to reveal details of marine life like sea
+                            turtles.</p>
+                    </div>
+                </div>
+
+                <!-- Example 3 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
+                    <div class="aspect-square bg-black relative">
+                        <img-comparison-slider class="w-full h-full object-cover focus:outline-none">
+                            <img slot="first" src="/static/images/examples/ex3_before.png"
+                                class="w-full h-full object-cover" />
+                            <img slot="second" src="/static/images/examples/ex3_after.png"
+                                class="w-full h-full object-cover" />
+                        </img-comparison-slider>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Deep Sea Dehazing</h3>
+                        <p class="text-slate-400 text-sm">Effectively removes scattering and restores visibility in
+                            rocky terrains.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div x-show="loading"
+            class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400 mx-auto mb-4">
+                </div>
+                <p class="text-xl font-semibold animate-pulse">Running DSP Algorithms...</p>
+                <p class="text-sm text-slate-400">This might take a moment.</p>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div x-show="results" style="display: none;" class="mb-20">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Left Column: Visuals (Col Span 2) -->
+                <div class="lg:col-span-2 space-y-6">
+
+                    <!-- Toggle View -->
+                    <div class="flex justify-center lg:justify-start mb-4">
+                        <div class="bg-slate-800 p-1 rounded-full flex gap-2 border border-slate-700">
+                            <button @click="showDetections = false"
+                                :class="{'bg-cyan-500 text-white shadow-lg': !showDetections, 'text-slate-400 hover:text-white': showDetections}"
+                                class="px-6 py-2 rounded-full font-medium transition text-sm">
+                                Comparison Slider
+                            </button>
+                            <button @click="showDetections = true"
+                                :class="{'bg-purple-600 text-white shadow-lg': showDetections, 'text-slate-400 hover:text-white': !showDetections}"
+                                class="px-6 py-2 rounded-full font-medium transition text-sm flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                Detections
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Visual Container -->
+                    <div class="bg-slate-800 rounded-3xl p-4 shadow-2xl border border-slate-700 min-h-[500px]">
+                        <!-- Comparison Slider View -->
+                        <div x-show="!showDetections" class="transition-opacity duration-300">
+                            <div class="flex justify-between items-center px-4 mb-2">
+                                <span class="text-sm font-bold text-slate-400 uppercase tracking-wider">Before</span>
+                                <span class="text-sm font-bold text-cyan-400 uppercase tracking-wider">After</span>
+                            </div>
+                            <div class="relative w-full rounded-2xl overflow-hidden bg-black/50">
+                                <img-comparison-slider class="w-full focus:outline-none">
+                                    <img slot="first"
+                                        :src="results?.original ? '/' + results.original + '?' + Date.now() : ''"
+                                        class="w-full h-auto block" />
+                                    <img slot="second"
+                                        :src="results?.final ? '/static/images/results/' + results.final + '?' + Date.now() : ''"
+                                        class="w-full h-auto block" />
+                                </img-comparison-slider>
+                            </div>
+                        </div>
+
+                        <!-- Detection View -->
+                        <div x-show="showDetections" style="display: none;" class="transition-opacity duration-300">
+                            <div
+                                class="relative w-full rounded-2xl overflow-hidden bg-black/50 aspect-auto text-center">
+                                <div class="relative inline-block w-full">
+                                    <img :src="results?.final ? '/static/images/results/' + results.final + '?' + Date.now() : ''"
+                                        class="w-full h-auto block" id="detectionImage" @load="updateBoxes()">
+
+                                    <template x-for="det in detections" :key="det.box.join(',')">
+                                        <div class="absolute border-2 border-purple-500 bg-purple-500/10 hover:bg-purple-500/20 transition cursor-help"
+                                            :style="getBoxStyle(det.box)">
+                                            <div
+                                                class="absolute -top-7 left-0 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm whitespace-nowrap">
+                                                <span x-text="det.label.toUpperCase()"></span>
+                                                <span class="opacity-75"
+                                                    x-text="Math.round(det.confidence * 100) + '%'"></span>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                    <div x-show="detections.length === 0"
+                                        class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div
+                                            class="bg-black/60 backdrop-blur px-6 py-3 rounded-xl text-white font-medium">
+                                            No objects detected</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4 text-slate-400 text-sm">
+                                Detecting: Fish, Coral, Divers, Rocks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Controls & Metrics (Col Span 1) -->
+                <div class="space-y-6">
+
+                    <!-- Export Card -->
+                    <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 shadow-xl">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4 4m4 4V4"></path>
+                            </svg>
+                            Export High-Res
+                        </h3>
+                        <div class="space-y-3">
+                            <template x-if="window.isAuthenticated">
+                                <div>
+                                    <button @click="downloadImage(results?.final, 'jpg')"
+                                        class="w-full bg-cyan-600 hover:bg-cyan-500 text-white py-3 rounded-xl font-semibold transition flex items-center justify-between px-4 group mb-3">
+                                        <span>Download JPG</span>
+                                        <span
+                                            class="text-cyan-200 text-xs bg-cyan-800 px-2 py-1 rounded group-hover:bg-cyan-700">Best
+                                            for Photos</span>
+                                    </button>
+                                    <button @click="downloadImage(results?.final, 'png')"
+                                        class="w-full bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-semibold transition flex items-center justify-between px-4 group">
+                                        <span>Download PNG</span>
+                                        <span
+                                            class="text-slate-400 text-xs bg-slate-900 px-2 py-1 rounded group-hover:bg-slate-800">Lossless</span>
+                                    </button>
+                                </div>
+                            </template>
+                            <template x-if="!window.isAuthenticated">
+                                <a href="{{ url_for('login') }}"
+                                    class="block w-full bg-cyan-600 hover:bg-cyan-500 text-white py-3 rounded-xl font-bold transition text-center shadow-lg shadow-cyan-600/20">
+                                    Login to Download
+                                </a>
+                            </template>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-slate-700">
+                            <button @click="reset()"
+                                class="w-full text-slate-400 hover:text-white flex items-center justify-center gap-2 py-2 transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                    </path>
+                                </svg>
+                                Process New Image
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Metrics Side Card -->
+                    <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 shadow-xl">
+                        <h3 class="text-xl font-bold mb-4 text-white">Quality Metrics</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                <div>
+                                    <div class="text-slate-400 text-xs">UCIQE</div>
+                                    <div class="text-sm font-medium text-slate-300">Color Quality</div>
+                                </div>
+                                <div class="text-xl font-bold text-cyan-400" x-text="metrics?.UCIQE"></div>
+                            </div>
+                            <div
+                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                <div>
+                                    <div class="text-slate-400 text-xs">Entropy</div>
+                                    <div class="text-sm font-medium text-slate-300">Details</div>
+                                </div>
+                                <div class="text-xl font-bold text-purple-400" x-text="metrics?.Entropy"></div>
+                            </div>
+                            <div
+                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                                <div>
+                                    <div class="text-slate-400 text-xs">UIQM</div>
+                                    <div class="text-sm font-medium text-slate-300">Overall</div>
+                                </div>
+                                <div class="text-xl font-bold text-emerald-400" x-text="metrics?.['UIQM (Est)']"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis Dashboard (Histograms) -->
+        <div class="bg-slate-800 rounded-3xl p-8 shadow-2xl border border-slate-700 mb-20">
+            <h2
+                class="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Color Analysis</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Before Chart -->
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h3 class="text-lg font-semibold mb-4 text-center text-slate-300">Original Distribution</h3>
+                    <div class="relative h-64 w-full">
+                        <canvas id="beforeChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- After Chart -->
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h3 class="text-lg font-semibold mb-4 text-center text-slate-300">Enhanced Distribution</h3>
+                    <div class="relative h-64 w-full">
+                        <canvas id="afterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6 text-xs text-slate-500">
+                Click legend items to toggle channels (R, G, B, Luminance)
+            </div>
+        </div>
+
+
+        <!-- Intermediate Steps Gallery -->
+        <div>
+            <h3 class="text-2xl font-bold mb-8">Processing Pipeline Steps</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <template x-for="(step, label) in intermediateSteps" :key="label">
+                    <div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-800 cursor-pointer"
+                        @click="openModal('/static/images/results/' + step)">
+                        <img :src="'/static/images/results/' + step"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+                            <span class="text-sm font-medium text-white" x-text="formatLabel(label)"></span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Image Modal -->
+    <div x-show="modalOpen" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur"
+        @click="modalOpen = false" style="display: none;">
+        <img :src="modalImage" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl">
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

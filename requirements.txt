@@ -1,0 +1,12 @@
+flask
+numpy
+opencv-python
+scipy
+scikit-image
+pillow
+matplotlib
+ultralytics
+pandas
+flask-sqlalchemy
+flask-login
+captcha

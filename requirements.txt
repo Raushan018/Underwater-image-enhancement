@@ -7,6 +7,4 @@ pillow
 matplotlib
 ultralytics
 pandas
-flask-sqlalchemy
-flask-login
-captcha
+

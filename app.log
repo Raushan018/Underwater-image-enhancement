@@ -1,0 +1,591 @@
+2025-12-19 12:34:25,525 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 12:34:25,551 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 12:34:25,572 - werkzeug - INFO -  * Debugger PIN: 694-072-362
+2025-12-19 12:34:48,609 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "GET / HTTP/1.1" 200 -
+2025-12-19 12:34:48,920 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 12:34:48,926 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:34:48,928 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:34:48,937 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:34:48,943 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:34:48,947 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:34:48,953 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-19 12:34:48,955 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:48] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:34:55,082 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:34:55,125 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:34:55,390 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:34:57,090 - __main__ - INFO - Processing completed in 1.97 seconds
+2025-12-19 12:34:57,097 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:34:57] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:35:08,107 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:35:08,144 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:35:08,400 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:35:09,400 - __main__ - INFO - Processing completed in 1.26 seconds
+2025-12-19 12:35:09,405 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:35:09] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:35:17,517 - __main__ - INFO - Receiving file: pexels-blaque-x-264516-932638.jpg
+2025-12-19 12:35:17,528 - __main__ - INFO - Starting processing for pexels-blaque-x-264516-932638.jpg
+2025-12-19 12:35:17,927 - __main__ - INFO - Resizing image from (6000, 4000) to (1024, 682)
+2025-12-19 12:35:19,084 - __main__ - INFO - Processing completed in 1.56 seconds
+2025-12-19 12:35:19,088 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:35:19] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:35:27,934 - __main__ - INFO - Receiving file: pexels-npandey-2446439.jpg
+2025-12-19 12:35:27,944 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 12:35:28,212 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 12:35:29,609 - __main__ - INFO - Processing completed in 1.66 seconds
+2025-12-19 12:35:29,614 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:35:29] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:35:38,861 - __main__ - INFO - Receiving file: camera_capture.jpg
+2025-12-19 12:35:38,864 - __main__ - INFO - Starting processing for camera_capture.jpg
+2025-12-19 12:35:39,464 - __main__ - INFO - Processing completed in 0.60 seconds
+2025-12-19 12:35:39,467 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:35:39] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:40:07,859 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:07] "GET / HTTP/1.1" 200 -
+2025-12-19 12:40:07,908 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 12:40:07,912 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:07] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:40:07,918 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:07] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:40:07,946 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:07] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:40:07,963 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:07] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:40:08,043 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:08] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:40:08,047 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-19 12:40:08,274 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:08] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:40:13,593 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:40:13,641 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:40:13,940 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:40:15,064 - __main__ - INFO - Processing completed in 1.42 seconds
+2025-12-19 12:40:15,071 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:15] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:40:22,576 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:40:22,624 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:40:22,862 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:40:23,855 - __main__ - INFO - Processing completed in 1.23 seconds
+2025-12-19 12:40:23,861 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:23] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:40:30,675 - __main__ - INFO - Receiving file: pexels-npandey-2446439.jpg
+2025-12-19 12:40:30,686 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 12:40:30,995 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 12:40:32,236 - __main__ - INFO - Processing completed in 1.55 seconds
+2025-12-19 12:40:32,242 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:40:32] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:41:49,424 - werkzeug - INFO -  * Detected change in 'C:\\Users\\User\\Desktop\\underwater image enhancement\\app.py', reloading
+2025-12-19 12:44:00,007 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 12:44:00,059 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-19 12:44:00,059 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-19 12:44:00,063 - werkzeug - INFO -  * Restarting with stat
+2025-12-19 12:44:20,399 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 12:44:20,426 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 12:44:20,437 - werkzeug - INFO -  * Debugger PIN: 694-072-362
+2025-12-19 12:44:20,540 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:20] "GET / HTTP/1.1" 200 -
+2025-12-19 12:44:29,056 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "GET / HTTP/1.1" 200 -
+2025-12-19 12:44:29,254 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,282 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,368 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,370 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,621 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,623 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,626 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:44:29,692 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:44:29] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,019 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "GET / HTTP/1.1" 200 -
+2025-12-19 12:45:39,063 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,069 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,072 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,086 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,096 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,101 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,119 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-19 12:45:39,150 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:39] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 12:45:44,944 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:45:44,991 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:45:45,278 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:45:45,389 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:45,707 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:45,723 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:45,754 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:45,783 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:45,795 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:46,260 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:46,906 - __main__ - INFO - Processing completed in 1.92 seconds
+2025-12-19 12:45:46,914 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:46] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:45:53,374 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:45:53,415 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:45:53,691 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:45:53,822 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:53,857 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:53,870 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:53,893 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:53,917 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:53,926 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:54,335 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 12:45:54,724 - __main__ - INFO - Processing completed in 1.31 seconds
+2025-12-19 12:45:54,732 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:45:54] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:46:06,289 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:46:06,326 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:46:06,599 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:46:06,664 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 12:46:06,673 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 12:46:07,048 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 12:46:07,403 - __main__ - INFO - Processing completed in 1.08 seconds
+2025-12-19 12:46:07,411 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:46:07] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:46:15,340 - __main__ - INFO - Receiving file: camera_capture.jpg
+2025-12-19 12:46:15,343 - __main__ - INFO - Starting processing for camera_capture.jpg
+2025-12-19 12:46:15,374 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (480, 640, 3)
+2025-12-19 12:46:15,377 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (480, 640, 3)
+2025-12-19 12:46:15,543 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (480, 640, 3)
+2025-12-19 12:46:15,853 - __main__ - INFO - Processing completed in 0.51 seconds
+2025-12-19 12:46:15,856 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:46:15] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:47:26,276 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:47:26,312 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:47:26,545 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:47:26,604 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:26,612 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:27,000 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:27,380 - __main__ - INFO - Processing completed in 1.07 seconds
+2025-12-19 12:47:27,388 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:47:27] "POST /upload HTTP/1.1" 200 -
+2025-12-19 12:47:38,274 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:47:38,312 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 12:47:38,569 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 12:47:38,640 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:38,663 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:38,672 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:39,047 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 12:47:39,437 - __main__ - INFO - Processing completed in 1.12 seconds
+2025-12-19 12:47:39,446 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 12:47:39] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:27:43,381 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 15:27:43,425 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-12-19 15:27:43,425 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-19 15:27:43,427 - werkzeug - INFO -  * Restarting with stat
+2025-12-19 15:27:53,248 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 15:27:53,258 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 15:27:53,272 - werkzeug - INFO -  * Debugger PIN: 124-969-923
+2025-12-19 15:27:53,503 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "GET / HTTP/1.1" 200 -
+2025-12-19 15:27:53,658 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,662 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,663 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,669 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,682 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,691 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,737 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-19 15:27:53,839 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:53] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:27:55,090 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:27:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-19 15:28:03,989 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:28:04,004 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:28:04,190 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:28:04,272 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:04,470 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:04,479 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:04,496 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:04,513 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:04,521 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:04,880 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:05,344 - __main__ - INFO - Processing completed in 1.34 seconds
+2025-12-19 15:28:05,349 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:28:05] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:28:20,723 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:28:20,739 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:28:20,868 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:28:20,927 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:20,949 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:20,956 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:20,970 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:20,987 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:20,994 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:21,298 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:28:21,539 - __main__ - INFO - Processing completed in 0.80 seconds
+2025-12-19 15:28:21,543 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:28:21] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:36:45,590 - werkzeug - INFO -  * Detected change in 'C:\\Users\\User\\Desktop\\underwater image enhancement\\app.py', reloading
+2025-12-19 15:36:46,401 - werkzeug - INFO -  * Restarting with stat
+2025-12-19 15:37:04,155 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 15:37:04,170 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 15:37:04,181 - werkzeug - INFO -  * Debugger PIN: 124-969-923
+2025-12-19 15:37:15,572 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:37:15] "GET / HTTP/1.1" 200 -
+2025-12-19 15:39:34,010 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "GET / HTTP/1.1" 200 -
+2025-12-19 15:39:34,159 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:39:34,164 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:39:34,175 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:39:34,180 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 15:39:34,181 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:39:34,186 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:39:34,196 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-19 15:39:34,207 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:34] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:39:38,911 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:39:38,927 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:39:39,082 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:39:39,137 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:39,301 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:39,308 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:39,322 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:39,337 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:39,343 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:39,675 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:39:40,056 - __main__ - INFO - Processing completed in 1.13 seconds
+2025-12-19 15:39:40,061 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:40] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:39:53,047 - __main__ - INFO - Receiving file: 1.webp
+2025-12-19 15:39:53,049 - __main__ - INFO - Starting processing for 1.webp
+2025-12-19 15:39:53,082 - __main__ - INFO - Resizing image from (1300, 650) to (1024, 512)
+2025-12-19 15:39:53,136 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,156 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,162 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,176 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,188 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,194 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,463 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (512, 1024, 3)
+2025-12-19 15:39:53,683 - __main__ - INFO - Processing completed in 0.63 seconds
+2025-12-19 15:39:53,687 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:53] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:39:58,826 - __main__ - INFO - Receiving file: camera_capture.jpg
+2025-12-19 15:39:58,828 - __main__ - INFO - Starting processing for camera_capture.jpg
+2025-12-19 15:39:58,870 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:58,880 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:58,884 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:58,890 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:58,896 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:58,898 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:59,050 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (480, 640, 3)
+2025-12-19 15:39:59,272 - __main__ - INFO - Processing completed in 0.44 seconds
+2025-12-19 15:39:59,274 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:39:59] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:40:05,049 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:05,069 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:05,208 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:40:05,263 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,279 - __main__ - INFO - Stage 'Color Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,287 - __main__ - INFO - Stage 'Gamma Correction' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,300 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,316 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,322 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,627 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:05,848 - __main__ - INFO - Processing completed in 0.78 seconds
+2025-12-19 15:40:05,854 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:40:05] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:40:15,624 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:15,643 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:15,824 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:40:15,888 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:15,904 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:15,920 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:15,926 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:16,281 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:16,507 - __main__ - INFO - Processing completed in 0.86 seconds
+2025-12-19 15:40:16,512 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:40:16] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:40:51,125 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:51,146 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:51,318 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:40:51,376 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:51,387 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:51,402 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:51,408 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:51,780 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:52,077 - __main__ - INFO - Processing completed in 0.93 seconds
+2025-12-19 15:40:52,083 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:40:52] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:40:57,118 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:57,149 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:40:57,297 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:40:57,363 - __main__ - INFO - Stage 'Histogram Stretching' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:57,378 - __main__ - INFO - Stage 'Edge Preserving' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:57,394 - __main__ - INFO - Stage 'CLAHE' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:57,400 - __main__ - INFO - Stage 'Histogram Linearization' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:57,688 - __main__ - INFO - Stage 'Multiscale Fusion' completed. Shape: (700, 1024, 3)
+2025-12-19 15:40:57,923 - __main__ - INFO - Processing completed in 0.77 seconds
+2025-12-19 15:40:57,928 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:40:57] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:43:35,375 - werkzeug - INFO -  * Detected change in 'C:\\Users\\User\\Desktop\\underwater image enhancement\\src\\adaptive_enhancement.py', reloading
+2025-12-19 15:43:36,127 - werkzeug - INFO -  * Restarting with stat
+2025-12-19 15:43:45,688 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 15:43:45,700 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 15:43:45,706 - werkzeug - INFO -  * Debugger PIN: 124-969-923
+2025-12-19 15:44:17,824 - werkzeug - INFO -  * Detected change in 'C:\\Users\\User\\Desktop\\underwater image enhancement\\app.py', reloading
+2025-12-19 15:44:18,569 - werkzeug - INFO -  * Restarting with stat
+2025-12-19 15:44:28,235 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 15:44:28,246 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 15:44:28,254 - werkzeug - INFO -  * Debugger PIN: 124-969-923
+2025-12-19 15:44:42,832 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:44:42] "GET / HTTP/1.1" 200 -
+2025-12-19 15:46:01,175 - werkzeug - INFO -  * Detected change in 'C:\\Users\\User\\Desktop\\underwater image enhancement\\src\\depth_estimation.py', reloading
+2025-12-19 15:46:01,926 - werkzeug - INFO -  * Restarting with stat
+2025-12-19 15:46:11,451 - __main__ - INFO - YOLO-World model initialized successfully.
+2025-12-19 15:46:11,465 - werkzeug - WARNING -  * Debugger is active!
+2025-12-19 15:46:11,472 - werkzeug - INFO -  * Debugger PIN: 124-969-923
+2025-12-19 15:46:50,990 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:50] "GET / HTTP/1.1" 200 -
+2025-12-19 15:46:51,125 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 15:46:51,127 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:46:51,129 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:46:51,136 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:46:51,138 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:46:51,143 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:46:51,150 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-19 15:46:51,156 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:46:51] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,127 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "GET / HTTP/1.1" 200 -
+2025-12-19 15:49:58,143 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,148 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,149 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,162 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,164 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,169 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:49:58,170 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-19 15:49:58,224 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:49:58] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:50:07,111 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:50:07,135 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:50:07,285 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:50:07,349 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:50:07,544 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:50:07,554 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:50:07,571 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:50:07,587 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 129.20
+2025-12-19 15:50:07,597 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.85
+2025-12-19 15:50:07,953 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 120.49
+2025-12-19 15:50:08,332 - __main__ - INFO - Pipeline COMPLETE in 1.20s
+2025-12-19 15:50:08,337 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:50:08] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:50:15,560 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:50:15,579 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:50:15,709 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:50:15,777 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:50:15,801 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:50:15,812 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:50:15,827 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:50:15,844 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 129.20
+2025-12-19 15:50:15,851 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.85
+2025-12-19 15:50:16,160 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 120.49
+2025-12-19 15:50:16,405 - __main__ - INFO - Pipeline COMPLETE in 0.83s
+2025-12-19 15:50:16,409 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:50:16] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:51:15,038 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "GET / HTTP/1.1" 200 -
+2025-12-19 15:51:15,084 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,090 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,090 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,104 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,108 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,112 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,162 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-19 15:51:15,171 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:15] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:51:21,870 - __main__ - INFO - Receiving file: 6.jpg
+2025-12-19 15:51:21,873 - __main__ - INFO - Starting processing for 6.jpg
+2025-12-19 15:51:21,897 - __main__ - INFO - Resizing image from (1084, 576) to (1024, 544)
+2025-12-19 15:51:21,955 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (544, 1024, 3) | Mean: 141.12
+2025-12-19 15:51:21,973 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (544, 1024, 3) | Mean: 154.83
+2025-12-19 15:51:21,981 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (544, 1024, 3) | Mean: 181.25
+2025-12-19 15:51:21,994 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (544, 1024, 3) | Mean: 181.29
+2025-12-19 15:51:22,005 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (544, 1024, 3) | Mean: 164.93
+2025-12-19 15:51:22,011 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (544, 1024, 3) | Mean: 120.48
+2025-12-19 15:51:22,266 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (544, 1024, 3) | Mean: 143.87
+2025-12-19 15:51:22,503 - __main__ - INFO - Pipeline COMPLETE in 0.63s
+2025-12-19 15:51:22,508 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:51:22] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:54:24,262 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "GET / HTTP/1.1" 200 -
+2025-12-19 15:54:24,295 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-19 15:54:24,298 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:54:24,301 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:54:24,311 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:54:24,318 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:54:24,319 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2025-12-19 15:54:24,332 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-19 15:54:24,713 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:24] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2025-12-19 15:54:30,038 - __main__ - INFO - Receiving file: underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:54:30,057 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:54:30,214 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:54:30,274 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:54:30,295 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:54:30,303 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:54:30,318 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:54:30,333 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 129.20
+2025-12-19 15:54:30,341 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.85
+2025-12-19 15:54:30,707 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 120.49
+2025-12-19 15:54:30,973 - __main__ - INFO - Pipeline COMPLETE in 0.92s
+2025-12-19 15:54:30,979 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:30] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:54:30,993 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:30] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139870984 HTTP/1.1" 200 -
+2025-12-19 15:54:31,015 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:31] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_1_adaptive_color.jpg HTTP/1.1" 200 -
+2025-12-19 15:54:31,015 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:31] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_2_adaptive_gamma.jpg HTTP/1.1" 200 -
+2025-12-19 15:54:31,015 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:31] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_3_edge_preserving.jpg HTTP/1.1" 200 -
+2025-12-19 15:54:31,016 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:31] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_4_clahe.jpg HTTP/1.1" 200 -
+2025-12-19 15:54:31,017 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:31] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139870985 HTTP/1.1" 200 -
+2025-12-19 15:54:31,047 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:31] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_5_hist_linear.jpg HTTP/1.1" 200 -
+2025-12-19 15:54:40,339 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:54:40,496 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:54:40,565 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:54:40,589 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:54:40,606 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:54:40,624 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 125.28
+2025-12-19 15:54:40,632 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 111.29
+2025-12-19 15:54:40,929 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 117.80
+2025-12-19 15:54:41,153 - __main__ - INFO - Pipeline COMPLETE in 0.81s
+2025-12-19 15:54:41,156 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:41] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:54:41,167 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:41] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139881160 HTTP/1.1" 200 -
+2025-12-19 15:54:41,183 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:41] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139881162 HTTP/1.1" 200 -
+2025-12-19 15:54:44,780 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:44] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_raw.png HTTP/1.1" 200 -
+2025-12-19 15:54:50,690 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:54:50,826 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:54:50,883 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:54:50,901 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:54:50,911 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:54:50,926 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:54:50,941 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 129.20
+2025-12-19 15:54:50,948 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.85
+2025-12-19 15:54:51,193 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 120.49
+2025-12-19 15:54:51,412 - __main__ - INFO - Pipeline COMPLETE in 0.72s
+2025-12-19 15:54:51,415 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:51] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:54:51,424 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:51] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139891419 HTTP/1.1" 200 -
+2025-12-19 15:54:51,441 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:51] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139891419 HTTP/1.1" 200 -
+2025-12-19 15:54:59,075 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:54:59,211 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:54:59,269 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:54:59,288 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:54:59,298 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:54:59,314 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 128.81
+2025-12-19 15:54:59,322 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.87
+2025-12-19 15:54:59,609 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 120.36
+2025-12-19 15:54:59,845 - __main__ - INFO - Pipeline COMPLETE in 0.77s
+2025-12-19 15:54:59,849 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:59] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:54:59,859 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:59] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139899853 HTTP/1.1" 200 -
+2025-12-19 15:54:59,876 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:54:59] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139899854 HTTP/1.1" 200 -
+2025-12-19 15:55:11,352 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:55:11,490 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:55:11,555 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:55:11,576 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 129.58
+2025-12-19 15:55:11,586 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:55:11,601 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 138.07
+2025-12-19 15:55:11,617 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 129.20
+2025-12-19 15:55:11,625 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.85
+2025-12-19 15:55:12,008 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 120.49
+2025-12-19 15:55:12,268 - __main__ - INFO - Pipeline COMPLETE in 0.92s
+2025-12-19 15:55:12,273 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:12] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:55:12,283 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:12] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139912277 HTTP/1.1" 200 -
+2025-12-19 15:55:12,301 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:12] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139912277 HTTP/1.1" 200 -
+2025-12-19 15:55:19,654 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:55:19,787 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:55:19,849 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (700, 1024, 3) | Mean: 126.23
+2025-12-19 15:55:19,858 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 135.02
+2025-12-19 15:55:19,874 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 135.02
+2025-12-19 15:55:19,889 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 125.68
+2025-12-19 15:55:19,897 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.11
+2025-12-19 15:55:20,198 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 118.55
+2025-12-19 15:55:20,443 - __main__ - INFO - Pipeline COMPLETE in 0.79s
+2025-12-19 15:55:20,446 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:20] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:55:20,456 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:20] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139920450 HTTP/1.1" 200 -
+2025-12-19 15:55:20,478 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:20] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139920451 HTTP/1.1" 200 -
+2025-12-19 15:55:25,205 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:55:25,365 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:55:25,397 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (700, 1024, 3) | Mean: 127.90
+2025-12-19 15:55:25,411 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 127.90
+2025-12-19 15:55:25,429 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 123.38
+2025-12-19 15:55:25,437 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 113.71
+2025-12-19 15:55:25,778 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 118.09
+2025-12-19 15:55:26,013 - __main__ - INFO - Pipeline COMPLETE in 0.81s
+2025-12-19 15:55:26,018 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:26] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:55:26,028 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:26] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139926021 HTTP/1.1" 200 -
+2025-12-19 15:55:26,045 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:26] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139926023 HTTP/1.1" 200 -
+2025-12-19 15:55:34,180 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:55:34,318 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:55:34,355 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 121.60
+2025-12-19 15:55:34,371 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 120.29
+2025-12-19 15:55:34,378 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 112.66
+2025-12-19 15:55:34,659 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 116.10
+2025-12-19 15:55:34,880 - __main__ - INFO - Pipeline COMPLETE in 0.70s
+2025-12-19 15:55:34,884 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:34] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:55:34,892 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:34] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139934887 HTTP/1.1" 200 -
+2025-12-19 15:55:34,907 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:34] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139934888 HTTP/1.1" 200 -
+2025-12-19 15:55:37,423 - __main__ - INFO - Starting processing for underwater-view-colorful-pebbles-clear-water.jpg
+2025-12-19 15:55:37,571 - __main__ - INFO - Resizing image from (4096, 2800) to (1024, 700)
+2025-12-19 15:55:37,609 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (700, 1024, 3) | Mean: 122.54
+2025-12-19 15:55:37,623 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (700, 1024, 3) | Mean: 122.53
+2025-12-19 15:55:37,638 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (700, 1024, 3) | Mean: 123.15
+2025-12-19 15:55:37,646 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (700, 1024, 3) | Mean: 109.78
+2025-12-19 15:55:37,883 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (700, 1024, 3) | Mean: 115.89
+2025-12-19 15:55:38,105 - __main__ - INFO - Pipeline COMPLETE in 0.68s
+2025-12-19 15:55:38,108 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:38] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:55:38,118 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:38] "GET /static/images/uploads/underwater-view-colorful-pebbles-clear-water.jpg?1766139938111 HTTP/1.1" 200 -
+2025-12-19 15:55:38,135 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:38] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_color.jpg?1766139938113 HTTP/1.1" 200 -
+2025-12-19 15:55:52,534 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:55:52] "GET /static/images/results/underwater-view-colorful-pebbles-clear-water_depth_raw.png HTTP/1.1" 200 -
+2025-12-19 15:56:06,482 - __main__ - INFO - Receiving file: pexels-npandey-2446439.jpg
+2025-12-19 15:56:06,488 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:06,630 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:06,694 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (1024, 768, 3) | Mean: 79.81
+2025-12-19 15:56:06,708 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (1024, 768, 3) | Mean: 79.70
+2025-12-19 15:56:06,725 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 93.51
+2025-12-19 15:56:06,733 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 104.30
+2025-12-19 15:56:06,992 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 98.51
+2025-12-19 15:56:07,256 - __main__ - INFO - Pipeline COMPLETE in 0.77s
+2025-12-19 15:56:07,262 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "POST /upload HTTP/1.1" 200 -
+2025-12-19 15:56:07,292 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766139967268 HTTP/1.1" 200 -
+2025-12-19 15:56:07,317 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766139967286 HTTP/1.1" 200 -
+2025-12-19 15:56:07,318 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/results/pexels-npandey-2446439_1_adaptive_color.jpg HTTP/1.1" 200 -
+2025-12-19 15:56:07,318 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/results/pexels-npandey-2446439_2_adaptive_gamma.jpg HTTP/1.1" 200 -
+2025-12-19 15:56:07,320 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/results/pexels-npandey-2446439_4_clahe.jpg HTTP/1.1" 200 -
+2025-12-19 15:56:07,322 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/results/pexels-npandey-2446439_3_edge_preserving.jpg HTTP/1.1" 200 -
+2025-12-19 15:56:07,362 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:07] "GET /static/images/results/pexels-npandey-2446439_5_hist_linear.jpg HTTP/1.1" 200 -
+2025-12-19 15:56:16,608 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:16,753 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:16,831 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (1024, 768, 3) | Mean: 79.81
+2025-12-19 15:56:16,842 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 49.00
+2025-12-19 15:56:16,862 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (1024, 768, 3) | Mean: 48.86
+2025-12-19 15:56:16,881 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 68.08
+2025-12-19 15:56:16,890 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 95.62
+2025-12-19 15:56:17,220 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 82.75
+2025-12-19 15:56:17,474 - __main__ - INFO - Pipeline COMPLETE in 0.87s
+2025-12-19 15:56:17,479 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:17] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:17,503 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:17] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766139977485 HTTP/1.1" 200 -
+2025-12-19 15:56:17,522 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:17] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766139977497 HTTP/1.1" 200 -
+2025-12-19 15:56:19,007 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:19,152 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:19,254 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (1024, 768, 3) | Mean: 73.71
+2025-12-19 15:56:19,276 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (1024, 768, 3) | Mean: 71.67
+2025-12-19 15:56:19,286 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 39.44
+2025-12-19 15:56:19,302 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (1024, 768, 3) | Mean: 39.28
+2025-12-19 15:56:19,319 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 58.14
+2025-12-19 15:56:19,327 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 88.54
+2025-12-19 15:56:19,633 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 75.46
+2025-12-19 15:56:19,879 - __main__ - INFO - Pipeline COMPLETE in 0.87s
+2025-12-19 15:56:19,883 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:19] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:19,903 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:19] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766139979888 HTTP/1.1" 200 -
+2025-12-19 15:56:19,926 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:19] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766139979897 HTTP/1.1" 200 -
+2025-12-19 15:56:21,487 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:21,628 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:21,718 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (1024, 768, 3) | Mean: 73.71
+2025-12-19 15:56:21,726 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 46.03
+2025-12-19 15:56:21,743 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (1024, 768, 3) | Mean: 45.87
+2025-12-19 15:56:21,759 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 66.44
+2025-12-19 15:56:21,767 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 68.28
+2025-12-19 15:56:22,054 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 67.31
+2025-12-19 15:56:22,308 - __main__ - INFO - Pipeline COMPLETE in 0.82s
+2025-12-19 15:56:22,313 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:22] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:22,358 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:22] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766139982343 HTTP/1.1" 200 -
+2025-12-19 15:56:22,375 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:22] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766139982353 HTTP/1.1" 200 -
+2025-12-19 15:56:27,911 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:28,053 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:28,147 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (1024, 768, 3) | Mean: 73.71
+2025-12-19 15:56:28,159 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 46.03
+2025-12-19 15:56:28,177 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 67.07
+2025-12-19 15:56:28,185 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 67.98
+2025-12-19 15:56:28,482 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 67.43
+2025-12-19 15:56:28,724 - __main__ - INFO - Pipeline COMPLETE in 0.81s
+2025-12-19 15:56:28,728 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:28] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:28,748 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:28] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766139988733 HTTP/1.1" 200 -
+2025-12-19 15:56:28,765 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:28] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766139988743 HTTP/1.1" 200 -
+2025-12-19 15:56:33,777 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:33,919 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:34,012 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (1024, 768, 3) | Mean: 73.71
+2025-12-19 15:56:34,034 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (1024, 768, 3) | Mean: 71.67
+2025-12-19 15:56:34,044 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 39.44
+2025-12-19 15:56:34,061 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 58.66
+2025-12-19 15:56:34,069 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 87.69
+2025-12-19 15:56:34,352 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 75.17
+2025-12-19 15:56:34,612 - __main__ - INFO - Pipeline COMPLETE in 0.84s
+2025-12-19 15:56:34,617 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:34] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:34,641 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:34] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766139994623 HTTP/1.1" 200 -
+2025-12-19 15:56:34,657 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:34] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766139994636 HTTP/1.1" 200 -
+2025-12-19 15:56:39,508 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:39,652 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:39,721 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (1024, 768, 3) | Mean: 79.81
+2025-12-19 15:56:39,730 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 49.00
+2025-12-19 15:56:39,747 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 68.69
+2025-12-19 15:56:39,755 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 94.98
+2025-12-19 15:56:40,114 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 82.62
+2025-12-19 15:56:40,352 - __main__ - INFO - Pipeline COMPLETE in 0.84s
+2025-12-19 15:56:40,355 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:40] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:40,378 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:40] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766140000360 HTTP/1.1" 200 -
+2025-12-19 15:56:40,397 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:40] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766140000372 HTTP/1.1" 200 -
+2025-12-19 15:56:42,262 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:42,408 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:42,478 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 54.59
+2025-12-19 15:56:42,497 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 76.20
+2025-12-19 15:56:42,504 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 71.31
+2025-12-19 15:56:42,832 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 73.32
+2025-12-19 15:56:43,112 - __main__ - INFO - Pipeline COMPLETE in 0.85s
+2025-12-19 15:56:43,117 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:43] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:43,142 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:43] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766140003122 HTTP/1.1" 200 -
+2025-12-19 15:56:43,163 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:43] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766140003137 HTTP/1.1" 200 -
+2025-12-19 15:56:44,165 - __main__ - INFO - Starting processing for pexels-npandey-2446439.jpg
+2025-12-19 15:56:44,332 - __main__ - INFO - Resizing image from (3024, 4032) to (768, 1024)
+2025-12-19 15:56:44,393 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (1024, 768, 3) | Mean: 54.59
+2025-12-19 15:56:44,408 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (1024, 768, 3) | Mean: 54.44
+2025-12-19 15:56:44,424 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (1024, 768, 3) | Mean: 75.51
+2025-12-19 15:56:44,432 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (1024, 768, 3) | Mean: 71.37
+2025-12-19 15:56:44,694 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (1024, 768, 3) | Mean: 72.99
+2025-12-19 15:56:44,937 - __main__ - INFO - Pipeline COMPLETE in 0.77s
+2025-12-19 15:56:44,942 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:44] "POST /reprocess HTTP/1.1" 200 -
+2025-12-19 15:56:44,959 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:44] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766140004946 HTTP/1.1" 200 -
+2025-12-19 15:56:44,976 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:44] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766140004953 HTTP/1.1" 200 -
+2025-12-19 15:57:07,822 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:57:07] "GET /static/images/results/pexels-npandey-2446439_depth_raw.png HTTP/1.1" 200 -

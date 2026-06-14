@@ -1,12 +1,14 @@
 import cv2
 import numpy as np
-from ultralytics import YOLO
 
 class DetectionService:
     def __init__(self, model_path='yolov8s-world.pt'):
         """
         Initialize the YOLO-World model for open-vocabulary detection.
         """
+        # Lazy import to avoid loading heavy torch/ultralytics libraries unless needed
+        from ultralytics import YOLO
+        
         # This will download the weights if not present
         self.model = YOLO(model_path)
         

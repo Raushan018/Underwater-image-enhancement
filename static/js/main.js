@@ -29,6 +29,8 @@ function app() {
             }, 5000);
         },
 
+        detectionEnabled: window.detectionEnabled !== false,
+
         // Pipeline Configuration
         pipelineConfig: {
             stretch: true,

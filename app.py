@@ -30,13 +30,23 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Check if detection is enabled
+enable_detection = os.environ.get('ENABLE_DETECTION', 'true').lower() == 'true'
+# Auto-disable on Render to fit within the 512MB RAM limit
+if os.environ.get('RENDER') == 'true' and 'ENABLE_DETECTION' not in os.environ:
+    enable_detection = False
+    logger.info("Running on Render: auto-disabling object detection to fit within the 512MB memory limit.")
+
 # Initialize Detection Service (Global)
 detection_service = None
-try:
-    detection_service = DetectionService()
-    logger.info("YOLO-World model initialized successfully.")
-except Exception as e:
-    logger.error(f"Failed to initialize YOLO model: {e}")
+if enable_detection:
+    try:
+        detection_service = DetectionService()
+        logger.info("YOLO-World model initialized successfully.")
+    except Exception as e:
+        logger.error(f"Failed to initialize YOLO model: {e}")
+else:
+    logger.info("Object detection is disabled (low-memory mode).")
 
 # Initialize Enhancers
 adaptive_enhancer = AdaptiveEnhancer()
@@ -279,7 +289,7 @@ def process_pipeline(image_path, filename, config=None):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', detection_enabled=enable_detection)
 
 @app.errorhandler(413)
 def request_entity_too_large(error):

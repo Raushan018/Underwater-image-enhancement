@@ -662,3 +662,113 @@
  * Running on http://127.0.0.1:3000
  * Running on http://192.168.29.120:3000
 2026-06-14 12:50:17,187 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 18:49:48,702 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-14 18:49:48,789 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2026-06-14 18:49:48,790 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 18:50:55,289 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-14 18:50:55,333 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2026-06-14 18:50:55,333 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 18:51:03,011 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET / HTTP/1.1" 200 -
+2026-06-14 18:51:03,320 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-06-14 18:51:03,366 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/images/examples/ex1_after.png HTTP/1.1" 200 -
+2026-06-14 18:51:03,369 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/images/examples/ex1_before.png HTTP/1.1" 200 -
+2026-06-14 18:51:03,679 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/images/examples/ex2_after.png HTTP/1.1" 200 -
+2026-06-14 18:51:03,681 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/images/examples/ex2_before.png HTTP/1.1" 200 -
+2026-06-14 18:51:03,715 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/images/examples/ex3_before.png HTTP/1.1" 200 -
+2026-06-14 18:51:03,778 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:03] "GET /static/js/main.js HTTP/1.1" 200 -
+2026-06-14 18:51:04,248 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:04] "GET /static/images/examples/ex3_after.png HTTP/1.1" 200 -
+2026-06-14 18:51:05,063 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-14 18:51:21,108 - __main__ - INFO - Receiving file: sauber-c44-formula-4000x3000-19043.jpeg
+2026-06-14 18:51:21,133 - __main__ - INFO - Starting processing for sauber-c44-formula-4000x3000-19043.jpeg
+2026-06-14 18:51:21,767 - __main__ - INFO - Resizing image from (4000, 3000) to (1024, 768)
+2026-06-14 18:51:21,964 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (768, 1024, 3) | Mean: 56.17
+2026-06-14 18:51:22,306 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (768, 1024, 3) | Mean: 54.81
+2026-06-14 18:51:22,327 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (768, 1024, 3) | Mean: 22.69
+2026-06-14 18:51:22,360 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (768, 1024, 3) | Mean: 22.64
+2026-06-14 18:51:22,393 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (768, 1024, 3) | Mean: 36.39
+2026-06-14 18:51:22,409 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (768, 1024, 3) | Mean: 76.89
+2026-06-14 18:51:22,915 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (768, 1024, 3) | Mean: 63.83
+2026-06-14 18:51:23,730 - __main__ - INFO - Pipeline COMPLETE in 2.60s
+2026-06-14 18:51:23,739 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "POST /upload HTTP/1.1" 200 -
+2026-06-14 18:51:23,784 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/uploads/sauber-c44-formula-4000x3000-19043.jpeg?1781443283768 HTTP/1.1" 200 -
+2026-06-14 18:51:23,813 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_4_clahe.jpg HTTP/1.1" 200 -
+2026-06-14 18:51:23,815 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_depth_color.jpg?1781443283770 HTTP/1.1" 200 -
+2026-06-14 18:51:23,816 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_2_adaptive_gamma.jpg HTTP/1.1" 200 -
+2026-06-14 18:51:23,815 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_1_adaptive_color.jpg HTTP/1.1" 200 -
+2026-06-14 18:51:23,819 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_3_edge_preserving.jpg HTTP/1.1" 200 -
+2026-06-14 18:51:23,854 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:23] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_5_hist_linear.jpg HTTP/1.1" 200 -
+2026-06-14 18:51:37,614 - __main__ - INFO - Starting processing for sauber-c44-formula-4000x3000-19043.jpeg
+2026-06-14 18:51:38,272 - __main__ - INFO - Resizing image from (4000, 3000) to (1024, 768)
+2026-06-14 18:51:38,461 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (768, 1024, 3) | Mean: 56.17
+2026-06-14 18:51:38,479 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (768, 1024, 3) | Mean: 23.67
+2026-06-14 18:51:38,511 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (768, 1024, 3) | Mean: 23.63
+2026-06-14 18:51:38,541 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (768, 1024, 3) | Mean: 37.30
+2026-06-14 18:51:38,554 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (768, 1024, 3) | Mean: 69.98
+2026-06-14 18:51:39,057 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (768, 1024, 3) | Mean: 59.40
+2026-06-14 18:51:39,476 - __main__ - INFO - Pipeline COMPLETE in 1.86s
+2026-06-14 18:51:39,481 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:39] "POST /reprocess HTTP/1.1" 200 -
+2026-06-14 18:51:39,500 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:39] "GET /static/images/uploads/sauber-c44-formula-4000x3000-19043.jpeg?1781443299486 HTTP/1.1" 200 -
+2026-06-14 18:51:39,521 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:51:39] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_depth_color.jpg?1781443299489 HTTP/1.1" 200 -
+2026-06-14 18:52:39,155 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "GET / HTTP/1.1" 200 -
+2026-06-14 18:52:39,327 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,343 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,346 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,396 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,428 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,433 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,555 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-14 18:52:39,586 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:39] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-14 18:52:40,234 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:52:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-14 18:53:33,440 - __main__ - INFO - Receiving file: sauber-c44-formula-4000x3000-19043.jpeg
+2026-06-14 18:53:33,484 - __main__ - INFO - Starting processing for sauber-c44-formula-4000x3000-19043.jpeg
+2026-06-14 18:53:34,093 - __main__ - INFO - Resizing image from (4000, 3000) to (1024, 768)
+2026-06-14 18:53:34,263 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (768, 1024, 3) | Mean: 56.17
+2026-06-14 18:53:34,307 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (768, 1024, 3) | Mean: 54.81
+2026-06-14 18:53:34,330 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (768, 1024, 3) | Mean: 22.69
+2026-06-14 18:53:34,367 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (768, 1024, 3) | Mean: 22.64
+2026-06-14 18:53:34,398 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (768, 1024, 3) | Mean: 36.39
+2026-06-14 18:53:34,412 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (768, 1024, 3) | Mean: 76.89
+2026-06-14 18:53:34,860 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (768, 1024, 3) | Mean: 63.83
+2026-06-14 18:53:35,248 - __main__ - INFO - Pipeline COMPLETE in 1.76s
+2026-06-14 18:53:35,256 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "POST /upload HTTP/1.1" 200 -
+2026-06-14 18:53:35,277 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/uploads/sauber-c44-formula-4000x3000-19043.jpeg?1781443415263 HTTP/1.1" 200 -
+2026-06-14 18:53:35,301 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_depth_color.jpg?1781443415265 HTTP/1.1" 200 -
+2026-06-14 18:53:35,303 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_1_adaptive_color.jpg HTTP/1.1" 200 -
+2026-06-14 18:53:35,313 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_3_edge_preserving.jpg HTTP/1.1" 200 -
+2026-06-14 18:53:35,314 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_4_clahe.jpg HTTP/1.1" 200 -
+2026-06-14 18:53:35,322 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_2_adaptive_gamma.jpg HTTP/1.1" 200 -
+2026-06-14 18:53:35,365 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 18:53:35] "GET /static/images/results/sauber-c44-formula-4000x3000-19043_5_hist_linear.jpg HTTP/1.1" 200 -
+2026-06-14 19:11:49,284 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-14 19:11:49,311 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2026-06-14 19:11:49,312 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 19:12:03,995 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:03] "GET / HTTP/1.1" 200 -
+2026-06-14 19:12:04,031 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,039 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,042 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,060 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,132 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,134 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,149 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-14 19:12:04,152 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:04] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-14 19:12:05,011 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:12:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-14 19:12:38,419 - __main__ - INFO - Object detection is disabled (low-memory mode).
+2026-06-14 19:12:38,459 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2026-06-14 19:12:38,459 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 19:13:01,413 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-14 19:13:01,442 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2026-06-14 19:13:01,442 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

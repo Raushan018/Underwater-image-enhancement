@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@7/dist/styles.css" />
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        window.detectionEnabled = {{ 'true' if detection_enabled else 'false' }};
+    </script>
 </head>
 
 <body class="bg-slate-900 text-white font-['Inter'] antialiased" x-data="app()">
@@ -415,35 +416,53 @@
 
                         <!-- Detection View -->
                         <div x-show="showDetections" style="display: none;" class="transition-opacity duration-300">
-                            <!-- ... existing detection code ... -->
-                            <div
-                                class="relative w-full rounded-2xl overflow-hidden bg-black/50 aspect-auto text-center">
-                                <div class="relative inline-block w-full">
-                                    <img :src="results?.final_b64 ? results.final_b64 : (results?.final ? '/static/images/results/' + results.final + '?' + Date.now() : '')"
-                                        class="w-full h-auto block" id="detectionImage" @load="updateBoxes()">
-
-                                    <template x-for="det in detections" :key="det.box.join(',')">
-                                        <div class="absolute border-2 border-purple-500 bg-purple-500/10 hover:bg-purple-500/20 transition cursor-help"
-                                            :style="getBoxStyle(det.box)">
-                                            <div
-                                                class="absolute -top-7 left-0 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm whitespace-nowrap">
-                                                <span x-text="det.label.toUpperCase()"></span>
-                                                <span class="opacity-75"
-                                                    x-text="Math.round(det.confidence * 100) + '%'"></span>
-                                            </div>
-                                        </div>
-                                    </template>
-
-                                    <div x-show="detections.length === 0"
-                                        class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <div
-                                            class="bg-black/60 backdrop-blur px-6 py-3 rounded-xl text-white font-medium">
-                                            No objects detected</div>
-                                    </div>
+                            <!-- Warning when detection is disabled -->
+                            <div x-show="!detectionEnabled" class="flex flex-col items-center justify-center py-12 px-4">
+                                <div class="bg-slate-800 border border-amber-500/30 rounded-2xl p-6 max-w-md text-center shadow-xl backdrop-blur">
+                                    <svg class="w-12 h-12 text-amber-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                    </svg>
+                                    <h4 class="text-base font-bold text-slate-100 mb-1">Detections Unavailable</h4>
+                                    <p class="text-sm text-slate-400">
+                                        Object detection is disabled in this low-memory environment (like Render's Free tier) to prevent server crashes.
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-3">
+                                        To enable this feature, host on a larger instance or run locally with <code class="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">ENABLE_DETECTION=true</code>.
+                                    </p>
                                 </div>
                             </div>
-                            <div class="text-center mt-4 text-slate-400 text-sm">
-                                Detecting: Fish, Coral, Divers, Rocks
+
+                            <!-- Detections content -->
+                            <div x-show="detectionEnabled">
+                                <div
+                                    class="relative w-full rounded-2xl overflow-hidden bg-black/50 aspect-auto text-center">
+                                    <div class="relative inline-block w-full">
+                                        <img :src="results?.final_b64 ? results.final_b64 : (results?.final ? '/static/images/results/' + results.final + '?' + Date.now() : '')"
+                                            class="w-full h-auto block" id="detectionImage" @load="updateBoxes()">
+
+                                        <template x-for="det in detections" :key="det.box.join(',')">
+                                            <div class="absolute border-2 border-purple-500 bg-purple-500/10 hover:bg-purple-500/20 transition cursor-help"
+                                                :style="getBoxStyle(det.box)">
+                                                <div
+                                                    class="absolute -top-7 left-0 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm whitespace-nowrap">
+                                                    <span x-text="det.label.toUpperCase()"></span>
+                                                    <span class="opacity-75"
+                                                        x-text="Math.round(det.confidence * 100) + '%'"></span>
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <div x-show="detections.length === 0"
+                                            class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                            <div
+                                                class="bg-black/60 backdrop-blur px-6 py-3 rounded-xl text-white font-medium">
+                                                No objects detected</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4 text-slate-400 text-sm">
+                                    Detecting: Fish, Coral, Divers, Rocks
+                                </div>
                             </div>
                         </div>
 

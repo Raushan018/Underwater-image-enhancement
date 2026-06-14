@@ -1,173 +1,207 @@
+"""
+adaptive_enhancement.py
+Stages 1-4 of the underwater image enhancement pipeline.
+Stage 1: Adaptive histogram stretching
+Stage 2: Adaptive colour correction (white balance) - float32 safe
+Stage 3: Adaptive gamma correction via luminance LUT
+Stage 4: Edge-preserving bilateral denoising
+"""
+
 import cv2
 import numpy as np
+import logging
 
-class AdaptiveEnhancer:
-    def __init__(self):
-        pass
+logger = logging.getLogger(__name__)
 
-    def adaptive_histogram_stretching(self, img, clip_percent=1.0):
-        """
-        Performs adaptive histogram stretching by clipping extreme values.
-        Args:
-            img: Input image (BGR)
-            clip_percent: Percentage of low/high values to clip.
-        Returns:
-            Stretched image.
-        """
-        # Split channels
-        channels = cv2.split(img)
-        out_channels = []
 
-        for channel in channels:
-            # Calculate percentiles
-            low_val = np.percentile(channel, clip_percent)
-            high_val = np.percentile(channel, 100 - clip_percent)
+# ---------------------------------------------------------------------------
+# Stage 1 — Adaptive Histogram Stretching
+# ---------------------------------------------------------------------------
+def adaptive_histogram_stretch(image: np.ndarray) -> np.ndarray:
+    """
+    Expand compressed dynamic range using per-channel percentile stretch.
+    Uses 1st/99th percentile to avoid extreme pixels dominating the remap.
 
-            # Stretch
-            # Apply linear stretching: (x - low) * 255 / (high - low)
-            # Clip values before scaling to avoid wrapping
-            stretched = cv2.normalize(channel, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
-            
-            # Using actual min/max from percentiles for robust stretching
-            if high_val > low_val:
-                stretched = np.clip((channel - low_val) * (255.0 / (high_val - low_val)), 0, 255).astype(np.uint8)
-            else:
-                stretched = channel
-                
-            out_channels.append(stretched)
+    Why: Water scattering compresses all channel values into a narrow band.
+    Stretching each channel independently compensates for differential
+    wavelength absorption (red absorbed most, blue least).
+    """
+    if image is None or image.size == 0:
+        return image
 
-        return cv2.merge(out_channels)
+    result = np.zeros_like(image, dtype=np.float32)
 
-    def adaptive_color_correction(self, img):
-        """
-        Applies adaptive color correction in LAB and HSV spaces.
-        1. LAB: Gray World assumption adaptation (balancing A and B channels).
-        2. HSV: Saturation enhancement.
-        """
-        # --- LAB Color Correction ---
-        result = img.copy()
-        result = cv2.cvtColor(result, cv2.COLOR_BGR2LAB)
-        l, a, b = cv2.split(result)
+    for ch in range(3):
+        channel = image[:, :, ch].astype(np.float32)
+        low = float(np.percentile(channel, 1))
+        high = float(np.percentile(channel, 99))
 
-        # Simple Gray World assumption: average of a and b should be 128 (neutral)
-        # We shift the mean of a and b towards 128
-        def adjust_channel(channel):
-            mean = np.mean(channel)
-            # Adjust so mean becomes 128
-            # shift = 128 - mean
-            # But naive shifting might clip. Let's use gain.
-            # gain = 128 / mean. This assumes 0 is fixed point. 
-            # Gray world normally operates on linear RGB. 
-            # In LAB, 128 is neutral for A and B.
-            return cv2.add(channel, (128 - mean))
+        if high - low < 1.0:
+            # Nearly uniform channel — leave unchanged
+            result[:, :, ch] = channel
+        else:
+            stretched = (channel - low) * 255.0 / (high - low)
+            result[:, :, ch] = np.clip(stretched, 0, 255)
 
-        # Only adjust if significantly off? Let's apply standard correction.
-        a = cv2.add(a, (128 - np.mean(a)))
-        b = cv2.add(b, (128 - np.mean(b)))
-        
-        # Clip to valid range
-        # Note: cv2.add with uint8 handles saturation automatically, but let's be safe if using float
-        # Here we rely on OpenCV uint8 saturation behavior
-        
-        result = cv2.merge([l, a, b])
-        result = cv2.cvtColor(result, cv2.COLOR_LAB2BGR)
+    return result.astype(np.uint8)
 
-        # --- HSV Saturation Enhancement ---
-        hsv = cv2.cvtColor(result, cv2.COLOR_BGR2HSV)
-        h, s, v = cv2.split(hsv)
 
-        # Adaptive saturation
-        # If image is dull (low mean saturation), boost it more.
-        mean_s = np.mean(s)
-        if mean_s < 80: # Arbitrary threshold for "dull"
-             # Boost saturation curve
-             # S_new = S ^ (log(0.5) / log(mean/255)) ? Or simple multiplication
-             # Let's use simple linear scaling with limit
-             factor = 1.2
-             s = cv2.multiply(s, factor)
-        
-        hsv_enhanced = cv2.merge([h, s, v])
-        final_img = cv2.cvtColor(hsv_enhanced, cv2.COLOR_HSV2BGR)
+# ---------------------------------------------------------------------------
+# Stage 2 — Adaptive Colour Correction (White Balance)
+# ---------------------------------------------------------------------------
+def adaptive_color_correction(image: np.ndarray, alpha: float = 0.5) -> np.ndarray:
+    """
+    Remove blue-green cast caused by water absorption.
 
-        return final_img
+    Step A: LAB neutral shift — push A and B channels toward neutral (128).
+            Uses float32 arithmetic to prevent silent uint8 clipping.
+    Step B: HSV saturation boost — only if image is dull (mean S < 80).
 
-    def adaptive_gamma_correction(self, img):
-        """
-        Calculates gamma based on log mean luminance.
-        """
-        # Convert to HSV to get Value (Luminance approximation) or LAB L
-        # HSV Value is just max(R,G,B). Lab L is perceptual.
-        lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
-        l, a, b = cv2.split(lab)
-        
-        # Calculate mean luminance normalized [0,1]
-        mean_l = np.mean(l) / 255.0
-        
-        # We want mean_l to be around 0.5.
-        # gamma = log(0.5) / log(mean_l)
-        # If mean_l is very low (dark), log(mean) is large negative, gamma < 1 (brighten)
-        # If mean_l is high (bright), gamma > 1 (darken)
-        
-        # Clamp mean_l to avoid div by zero or extreme values
-        mean_l = max(0.01, min(0.99, mean_l))
-        gamma = np.log(0.5) / np.log(mean_l)
-        
-        # Limit gamma range to avoid crazy washing out or darkening
-        gamma = max(0.5, min(2.5, gamma))
-        
-        # Apply gamma
-        inv_gamma = 1.0 / gamma
-        table = np.array([((i / 255.0) ** inv_gamma) * 255
-                          for i in np.arange(0, 256)]).astype("uint8")
-        
-        return cv2.LUT(img, table)
+    alpha: strength of LAB correction (0–1). Default 0.5 = 50% correction.
+    """
+    if image is None or image.size == 0:
+        return image
 
-    def apply_edge_preserving_filter(self, img):
-        """
-        Uses Guided Filter or Bilateral Filter.
-        Guided filter is generally faster and preserves edges well.
-        """
-        # Guided Filter usage
-        # radius: radius of window
-        # eps: regularization parameter
-        try:
-            # Using OpenCV's guidedFilter
-            # Guide is the image itself
-            radius = 8
-            eps = 50 * 50 # eps is usually variance^2? In cv2.ximgproc it's diff.
-            # cv2.guidedFilter exists in contrib or main depending on version. 
-            # Safer to use Bilateral for standard opencv-python if contrib not guaranteed.
-            # requirements claims 'opencv-python', which might not have ximgproc.
-            # Let's use Bilateral Filter which is standard.
-            
-            # Adaptive parameters?
-            # If noisy via std dev estimation, increase sigmaColor
-            
-            # Optimization: Use small explicit diameter (d=5) for speed
-            # Large sigmaSpace with d=-1 causes very slow performance
-            sigmaColor = 50
-            sigmaSpace = 50
-            d = 5 
-            
-            filtered = cv2.bilateralFilter(img, d=d, sigmaColor=sigmaColor, sigmaSpace=sigmaSpace)
-            return filtered
-        except:
-             return img
+    # --- Step A: LAB neutral shift ---
+    lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+    l_ch, a_ch, b_ch = cv2.split(lab)
 
-    def process(self, img):
-        """
-        Full adaptive pipeline.
-        """
-        # 1. Histogram Stretching (Contrast)
-        step1 = self.adaptive_histogram_stretching(img)
-        
-        # 2. Color Correction (Balance)
-        step2 = self.adaptive_color_correction(step1)
-        
-        # 3. Gamma Correction (Brightness)
-        step3 = self.adaptive_gamma_correction(step2)
-        
-        # 4. Edge Preserving Smoothing (De-noise/clean)
-        final = self.apply_edge_preserving_filter(step3)
-        
-        return final.astype(np.uint8) if final is not None else None
+    # Convert to float32 BEFORE arithmetic — prevents uint8 wrapping
+    a_f = a_ch.astype(np.float32)
+    b_f = b_ch.astype(np.float32)
+
+    # Shift toward neutral (128) by alpha fraction
+    a_f = a_f + (128.0 - np.mean(a_f)) * alpha
+    b_f = b_f + (128.0 - np.mean(b_f)) * alpha
+
+    # Clip explicitly before converting back
+    a_corrected = np.clip(a_f, 0, 255).astype(np.uint8)
+    b_corrected = np.clip(b_f, 0, 255).astype(np.uint8)
+
+    lab_corrected = cv2.merge([l_ch, a_corrected, b_corrected])
+    result = cv2.cvtColor(lab_corrected, cv2.COLOR_LAB2BGR)
+
+    # --- Step B: HSV saturation boost (conditional) ---
+    hsv = cv2.cvtColor(result, cv2.COLOR_BGR2HSV)
+    h_ch, s_ch, v_ch = cv2.split(hsv)
+
+    mean_sat = float(np.mean(s_ch))
+    if mean_sat < 80:
+        factor = 1.2
+        # float32 multiply then clip — prevents uint8 overflow
+        s_boosted = np.clip(s_ch.astype(np.float32) * factor, 0, 255).astype(np.uint8)
+        hsv_boosted = cv2.merge([h_ch, s_boosted, v_ch])
+        result = cv2.cvtColor(hsv_boosted, cv2.COLOR_HSV2BGR)
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Stage 3 — Adaptive Gamma Correction
+# ---------------------------------------------------------------------------
+def adaptive_gamma_correction(image: np.ndarray) -> np.ndarray:
+    """
+    Automatically correct brightness based on measured image luminance.
+
+    Formula: gamma = log(0.5) / log(mean_L)
+    This targets a mean luminance of 0.5 (mid-tone).
+
+    gamma < 1 → brightens dark images
+    gamma > 1 → darkens overexposed images
+    Clamped to [0.5, 2.5] to prevent extreme corrections.
+
+    Applied via a 256-entry LUT for speed (avoids per-pixel power op).
+    """
+    if image is None or image.size == 0:
+        return image
+
+    lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+    l_ch, a_ch, b_ch = cv2.split(lab)
+
+    l_norm = l_ch.astype(np.float32) / 255.0
+    mean_l = float(np.mean(l_norm))
+    mean_l = np.clip(mean_l, 0.01, 0.99)  # avoid log(0)
+
+    gamma = np.log(0.5) / np.log(mean_l)
+    gamma = float(np.clip(gamma, 0.5, 2.5))
+
+    # Build 256-entry LUT
+    lut = np.array(
+        [np.clip(((i / 255.0) ** gamma) * 255.0, 0, 255) for i in range(256)],
+        dtype=np.uint8
+    )
+
+    l_corrected = cv2.LUT(l_ch, lut)
+    lab_corrected = cv2.merge([l_corrected, a_ch, b_ch])
+    result = cv2.cvtColor(lab_corrected, cv2.COLOR_LAB2BGR)
+
+    logger.debug(f"Gamma correction: mean_L={mean_l:.3f}, gamma={gamma:.3f}")
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Stage 4 — Edge-Preserving Bilateral Denoising
+# ---------------------------------------------------------------------------
+def edge_preserving_sharpen(image: np.ndarray) -> np.ndarray:
+    """
+    Remove noise from water particles without blurring structural edges.
+
+    Bilateral filter weights each neighbour by:
+      - Spatial closeness (sigmaSpace)
+      - Colour similarity (sigmaColor)
+    Edges (high colour difference) are NOT smoothed.
+    Noise (low colour difference, uniform regions) IS smoothed.
+
+    After denoising, apply mild unsharp masking to recover
+    any softness introduced by the bilateral pass.
+    """
+    if image is None or image.size == 0:
+        return image
+
+    # Bilateral denoising
+    denoised = cv2.bilateralFilter(image, d=5, sigmaColor=50, sigmaSpace=50)
+
+    # Unsharp mask: enhance = original + alpha*(original - blurred)
+    blurred = cv2.GaussianBlur(denoised, (0, 0), 2.0)
+    sharpened = cv2.addWeighted(denoised, 1.3, blurred, -0.3, 0)
+
+    return np.clip(sharpened, 0, 255).astype(np.uint8)
+
+
+# ---------------------------------------------------------------------------
+# Full sequential pipeline: Stages 1–4
+# ---------------------------------------------------------------------------
+def apply_enhancement_pipeline(
+    image: np.ndarray,
+    do_stretch: bool = True,
+    do_wb: bool = True,
+    do_gamma: bool = True,
+    do_sharp: bool = True,
+) -> dict:
+    """
+    Run stages 1–4 in sequence. Each stage can be toggled independently.
+    Returns dict with image after each stage for intermediate display.
+    """
+    if image is None:
+        return {}
+
+    current = image.copy()
+    stages = {"original": image.copy()}
+
+    if do_stretch:
+        current = adaptive_histogram_stretch(current)
+
+    if do_wb:
+        current = adaptive_color_correction(current)
+        stages["wb"] = current.copy()
+
+    if do_gamma:
+        current = adaptive_gamma_correction(current)
+        stages["gamma"] = current.copy()
+
+    if do_sharp:
+        current = edge_preserving_sharpen(current)
+        stages["sharp"] = current.copy()
+
+    stages["after_stage4"] = current.copy()
+    return stages

@@ -1,0 +1,16 @@
+# Model weights (too large for git)
+weights/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store

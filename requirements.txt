@@ -7,4 +7,5 @@ pillow
 matplotlib
 ultralytics
 pandas
+git+https://github.com/ultralytics/CLIP.git
 

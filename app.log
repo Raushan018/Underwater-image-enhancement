@@ -589,3 +589,76 @@
 2025-12-19 15:56:44,959 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:44] "GET /static/images/uploads/pexels-npandey-2446439.jpg?1766140004946 HTTP/1.1" 200 -
 2025-12-19 15:56:44,976 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:56:44] "GET /static/images/results/pexels-npandey-2446439_depth_color.jpg?1766140004953 HTTP/1.1" 200 -
 2025-12-19 15:57:07,822 - werkzeug - INFO - 127.0.0.1 - - [19/Dec/2025 15:57:07] "GET /static/images/results/pexels-npandey-2446439_depth_raw.png HTTP/1.1" 200 -
+2026-06-14 12:38:33,791 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:38:33,820 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-14 12:38:33,820 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 12:38:33,821 - werkzeug - INFO -  * Restarting with stat
+2026-06-14 12:38:42,252 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:38:42,264 - werkzeug - WARNING -  * Debugger is active!
+2026-06-14 12:38:42,275 - werkzeug - INFO -  * Debugger PIN: 162-286-325
+2026-06-14 12:38:44,233 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET / HTTP/1.1" 200 -
+2026-06-14 12:38:44,263 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/images/examples/ex1_after.png HTTP/1.1" 200 -
+2026-06-14 12:38:44,263 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-06-14 12:38:44,263 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/images/examples/ex1_before.png HTTP/1.1" 200 -
+2026-06-14 12:38:44,275 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/images/examples/ex2_before.png HTTP/1.1" 200 -
+2026-06-14 12:38:44,278 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/images/examples/ex2_after.png HTTP/1.1" 200 -
+2026-06-14 12:38:44,282 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/images/examples/ex3_before.png HTTP/1.1" 200 -
+2026-06-14 12:38:44,287 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/js/main.js HTTP/1.1" 200 -
+2026-06-14 12:38:44,832 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:44] "GET /static/images/examples/ex3_after.png HTTP/1.1" 200 -
+2026-06-14 12:38:45,050 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:38:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-14 12:42:19,069 - werkzeug - INFO -  * Detected change in '/Users/shobhit/FInalYearProject/Underwater-image-enhancement/app.py', reloading
+2026-06-14 12:42:19,307 - werkzeug - INFO -  * Restarting with stat
+2026-06-14 12:42:27,250 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:42:27,268 - werkzeug - WARNING -  * Debugger is active!
+2026-06-14 12:42:27,280 - werkzeug - INFO -  * Debugger PIN: 162-286-325
+2026-06-14 12:42:56,143 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:43:48,998 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:43:49,020 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.29.120:3000
+2026-06-14 12:43:49,020 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 12:43:49,021 - werkzeug - INFO -  * Restarting with stat
+2026-06-14 12:43:57,394 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:43:57,411 - werkzeug - WARNING -  * Debugger is active!
+2026-06-14 12:43:57,423 - werkzeug - INFO -  * Debugger PIN: 162-286-325
+2026-06-14 12:43:57,496 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET / HTTP/1.1" 200 -
+2026-06-14 12:43:57,519 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/images/examples/ex1_before.png HTTP/1.1" 200 -
+2026-06-14 12:43:57,520 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-06-14 12:43:57,522 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/images/examples/ex1_after.png HTTP/1.1" 200 -
+2026-06-14 12:43:57,529 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/images/examples/ex2_before.png HTTP/1.1" 200 -
+2026-06-14 12:43:57,536 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/images/examples/ex2_after.png HTTP/1.1" 200 -
+2026-06-14 12:43:57,536 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/images/examples/ex3_before.png HTTP/1.1" 200 -
+2026-06-14 12:43:57,542 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/js/main.js HTTP/1.1" 200 -
+2026-06-14 12:43:57,888 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:57] "GET /static/images/examples/ex3_after.png HTTP/1.1" 200 -
+2026-06-14 12:43:58,120 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2026 12:43:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-14 12:44:46,767 - werkzeug - INFO -  * Detected change in '/Users/shobhit/FInalYearProject/Underwater-image-enhancement/app.py', reloading
+2026-06-14 12:44:47,031 - werkzeug - INFO -  * Restarting with stat
+2026-06-14 12:44:55,014 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:44:55,033 - werkzeug - WARNING -  * Debugger is active!
+2026-06-14 12:44:55,045 - werkzeug - INFO -  * Debugger PIN: 162-286-325
+2026-06-14 12:45:21,147 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:45:21,167 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.29.120:3000
+2026-06-14 12:45:21,167 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 12:46:14,209 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:46:14,230 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.29.120:3000
+2026-06-14 12:46:14,230 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 12:46:31,847 - __main__ - ERROR - Failed to initialize YOLO model: No module named 'clip'
+2026-06-14 12:46:31,867 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.29.120:3000
+2026-06-14 12:46:31,867 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 12:50:17,166 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-14 12:50:17,187 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.29.120:3000
+2026-06-14 12:50:17,187 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

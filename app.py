@@ -409,6 +409,6 @@ def download_file(filename):
         return str(e), 500
 
 if __name__ == '__main__':
-    # Debug mode is helpful but can mask some threading issues. 
-    # For production-like reliability, we turn off debug reloader sometimes, but here we keep it.
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    is_prod = os.environ.get('FLASK_ENV') == 'production'
+    app.run(host='0.0.0.0', port=port, debug=not is_prod, use_reloader=False)

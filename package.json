@@ -1,0 +1,12 @@
+{
+  "name": "underwater-image-enhancement",
+  "version": "1.0.0",
+  "description": "Underwater image enhancement using Flask backend",
+  "scripts": {
+    "dev": "PORT=3000 python3 app.py",
+    "start": "python3 app.py"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

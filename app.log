@@ -772,3 +772,12 @@
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.29.187:5000
 2026-06-14 19:13:01,442 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-14 19:14:13,767 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:13] "GET / HTTP/1.1" 200 -
+2026-06-14 19:14:13,797 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-14 19:14:13,803 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:13] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-14 19:14:13,804 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:13] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-14 19:14:13,820 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:13] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-14 19:14:14,084 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:14] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-14 19:14:14,087 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:14] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-14 19:14:14,095 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:14] "GET /static/js/main.js HTTP/1.1" 200 -
+2026-06-14 19:14:14,097 - werkzeug - INFO - 192.168.29.187 - - [14/Jun/2026 19:14:14] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -

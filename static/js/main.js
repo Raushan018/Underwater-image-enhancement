@@ -272,6 +272,19 @@ function app() {
         },
 
         navigateToSection(sectionId) {
+            if (sectionId === 'histogram') {
+                if (!this.results) {
+                    this.showToast("Please upload and process an image first to view the histogram analysis.", "info");
+                    return;
+                }
+                this.$nextTick(() => {
+                    const el = document.getElementById('histogram-analysis');
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+                return;
+            }
             if (this.results) {
                 this.reset();
             }

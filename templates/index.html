@@ -31,7 +31,7 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        window.detectionEnabled = {{ 'true' if detection_enabled else 'false' }};
+        window.detectionEnabled = "{{ 'true' if detection_enabled else 'false' }}" === "true";
     </script>
 </head>
 
@@ -70,22 +70,23 @@
 
                 <!-- Center Navigation Options -->
                 <div class="hidden md:flex items-center gap-8">
-                    <button @click="navigateToSection('pipeline')" 
-                        class="text-sm font-semibold tracking-wide text-slate-300 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 relative group py-2 cursor-pointer bg-transparent border-none">
-                        <svg class="w-4.5 h-4.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <span>Pipeline Config</span>
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </button>
-                    <button @click="navigateToSection('gallery')" 
+                    <button @click="navigateToSection('gallery')"
                         class="text-sm font-semibold tracking-wide text-slate-300 hover:text-teal-400 transition-colors duration-300 flex items-center gap-2 relative group py-2 cursor-pointer bg-transparent border-none">
-                        <svg class="w-4.5 h-4.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <span>Interactive Dashboard</span>
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                        <span>Dashboard</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                    <button @click="navigateToSection('pipeline')"
+                        class="text-sm font-semibold tracking-wide text-slate-300 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 relative group py-2 cursor-pointer bg-transparent border-none">
+                        <span>Pipeline</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                    <button @click="navigateToSection('histogram')"
+                        class="text-sm font-semibold tracking-wide text-slate-300 hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 relative group py-2 cursor-pointer bg-transparent border-none">
+                        <span>Histogram Analysis</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
                     </button>
                 </div>
 
@@ -108,7 +109,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto px-4 min-h-[45vh]">
                 <!-- Left Column: Heading & Description (Col Span 7) -->
                 <div class="lg:col-span-7 text-left flex flex-col justify-center">
-                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 font-heading leading-tight text-white opacity-100">
+                    <h1
+                        class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 font-heading leading-tight text-white opacity-100">
                         Reveal the <span
                             class="font-cursive font-normal bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent opacity-100">Deep
                             Blue</span>
@@ -839,7 +841,7 @@
         </div>
 
         <!-- Color Histograms Analysis -->
-        <div class="glass-panel rounded-3xl p-8 border border-slate-800/60 mb-16 bg-slate-950/15 shadow-2xl">
+        <div id="histogram-analysis" class="glass-panel rounded-3xl p-8 border border-slate-800/60 mb-16 bg-slate-950/15 shadow-2xl">
             <h2
                 class="text-2xl font-bold font-heading mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Chromatic Histogram Analysis

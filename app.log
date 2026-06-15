@@ -2452,3 +2452,180 @@
 2026-06-15 17:09:47,464 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
 2026-06-15 17:09:47,467 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:09:47] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
 2026-06-15 17:10:02,365 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:10:02] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:10:10,059 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:10:10,061 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:10:10] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:10:10,084 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:10:10,086 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:10:10] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:10:10,250 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:10:10,252 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:10:10] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:10:50,389 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:10:50,391 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:10:50] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:10,872 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:10] "GET / HTTP/1.1" 200 -
+2026-06-15 17:11:10,961 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 17:11:10,966 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:10] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:10,967 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:10] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:10,990 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:10] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:10,992 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:10] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:11,112 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:11] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:11,113 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 17:11:11,153 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:11] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:11,154 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:11] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:11,410 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:11:11,412 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:11] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:12,211 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:11:12,212 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:12] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:12,340 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:11:12,344 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:12] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:13,230 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:11:13,233 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:13] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:13,246 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:11:13,249 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:11:13] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:24,108 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-15 17:11:24,148 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.29.187:5001
+2026-06-15 17:11:24,148 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-15 17:11:24,311 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:24] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:30,130 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "GET / HTTP/1.1" 200 -
+2026-06-15 17:11:30,643 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,652 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,653 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,783 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,979 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,980 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,983 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,987 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:30,995 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:30] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:11:31,119 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:31] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:31,703 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:31] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:31,974 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:31] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:33,020 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:33] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:33,357 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:33] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:34,210 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:34] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:34,540 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:34] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:35,233 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:35] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:11:35,494 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:11:35] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:25,751 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:12:25,753 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:12:25] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:32,020 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:32] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:38,483 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:38] "GET / HTTP/1.1" 200 -
+2026-06-15 17:12:49,368 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:12:49,369 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:12:49] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:53,745 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:53] "GET / HTTP/1.1" 200 -
+2026-06-15 17:12:53,785 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,010 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,090 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,216 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,216 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,217 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,219 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,320 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,411 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:12:54,535 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:54,863 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:54] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:55,129 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:55] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:55,217 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-15 17:12:55,825 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:55] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:12:56,086 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:12:56] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:13:55,214 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:13:55] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:14:55,593 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:14:55] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:15:55,638 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:15:55] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:16:55,978 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:16:55] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:17:56,044 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:17:56] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:18:56,456 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:18:56] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:19:56,503 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:19:56] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:20:56,856 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:20:56] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:21:56,896 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:21:56] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:22:57,248 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:22:57] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:23:57,297 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:23:57] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:24:57,660 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:24:57] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:25:57,677 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:25:57] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:26:58,025 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:26:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:27:58,064 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:27:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:31,241 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:31] "GET / HTTP/1.1" 200 -
+2026-06-15 17:28:36,913 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:36,916 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:36] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:38,571 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:38] "GET / HTTP/1.1" 200 -
+2026-06-15 17:28:38,657 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 17:28:38,669 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:38] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:38,671 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:38] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:38,737 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:38] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:38,780 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:38] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:39,173 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:39,178 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 17:28:39,191 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:39,193 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:39,394 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:39,395 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:39,703 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:39,704 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:39,735 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:39,737 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:39] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:41,627 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:41,630 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:41] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:41,664 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:41,666 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:41] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:43,458 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "GET / HTTP/1.1" 200 -
+2026-06-15 17:28:43,528 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,529 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,530 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,591 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,593 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,597 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,599 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,621 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,622 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:43,746 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:43,748 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:43] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:44,188 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:44,189 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:44] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:44,222 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:44,224 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:44] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:45,115 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:45,117 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:45] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:45,140 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:45,142 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:45] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:46,039 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:46,041 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:46] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:46,057 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:46,059 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:46] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:47,908 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:47,910 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:47] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:47,928 - __main__ - INFO - serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True
+2026-06-15 17:28:47,929 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:28:47] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:56,876 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:56] "GET / HTTP/1.1" 200 -
+2026-06-15 17:28:56,945 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,120 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,257 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,375 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,375 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,376 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,378 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,433 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,571 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 17:28:57,700 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:57] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:58,065 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:58,345 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:58,948 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:28:59,667 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:28:59] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:29:04,764 - __main__ - INFO - Receiving file: ekamelev-fish-3203507_1920.jpg
+2026-06-15 17:29:04,771 - __main__ - INFO - Starting processing for ekamelev-fish-3203507_1920.jpg
+2026-06-15 17:29:04,836 - __main__ - INFO - Resizing image from (1920, 1424) to (1024, 759)
+2026-06-15 17:29:04,956 - __main__ - INFO - Stage SUCCESS: Histogram Stretching | Shape: (759, 1024, 3) | Mean: 90.74
+2026-06-15 17:29:05,216 - __main__ - INFO - Stage SUCCESS: Color Correction | Shape: (759, 1024, 3) | Mean: 88.70
+2026-06-15 17:29:05,236 - __main__ - INFO - Stage SUCCESS: Gamma Correction | Shape: (759, 1024, 3) | Mean: 67.05
+2026-06-15 17:29:05,264 - __main__ - INFO - Stage SUCCESS: Edge Preserving | Shape: (759, 1024, 3) | Mean: 67.03
+2026-06-15 17:29:05,299 - __main__ - INFO - Stage SUCCESS: CLAHE | Shape: (759, 1024, 3) | Mean: 82.97
+2026-06-15 17:29:05,315 - __main__ - INFO - Stage SUCCESS: Histogram Linearization | Shape: (759, 1024, 3) | Mean: 92.65
+2026-06-15 17:29:06,033 - __main__ - INFO - Stage SUCCESS: Multiscale Fusion | Shape: (759, 1024, 3) | Mean: 87.68
+2026-06-15 17:29:06,859 - __main__ - INFO - Pipeline COMPLETE in 2.09s
+2026-06-15 17:29:06,865 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "POST /upload HTTP/1.1" 200 -
+2026-06-15 17:29:06,895 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/uploads/ekamelev-fish-3203507_1920.jpg?1781524746873 HTTP/1.1" 200 -
+2026-06-15 17:29:06,917 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_2_adaptive_gamma.jpg HTTP/1.1" 200 -
+2026-06-15 17:29:06,919 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_3_edge_preserving.jpg HTTP/1.1" 200 -
+2026-06-15 17:29:06,928 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_1_adaptive_color.jpg HTTP/1.1" 200 -
+2026-06-15 17:29:06,949 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_4_clahe.jpg HTTP/1.1" 200 -
+2026-06-15 17:29:06,956 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_5_hist_linear.jpg HTTP/1.1" 200 -
+2026-06-15 17:29:06,968 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_depth_color.jpg?1781524746881 HTTP/1.1" 200 -
+2026-06-15 17:29:58,628 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:29:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -

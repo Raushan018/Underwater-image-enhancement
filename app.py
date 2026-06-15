@@ -30,6 +30,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Suppress Werkzeug's development server warning
+class WerkzeugFilter(logging.Filter):
+    def filter(self, record):
+        return "use a production wsgi server" not in record.getMessage().lower()
+
+logging.getLogger('werkzeug').addFilter(WerkzeugFilter())
+
+
 # Check if detection is enabled
 enable_detection = os.environ.get('ENABLE_DETECTION', 'true').lower() == 'true'
 # Auto-disable on Render to fit within the 512MB RAM limit

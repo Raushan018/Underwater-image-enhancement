@@ -2658,3 +2658,27 @@
 2026-06-15 17:31:43,975 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:31:43] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
 2026-06-15 17:31:44,857 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:31:44] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
 2026-06-15 17:31:44,866 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:31:44] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:20,487 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-15 21:07:20,529 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.187:5000
+2026-06-15 21:07:20,529 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-15 21:07:26,173 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "GET / HTTP/1.1" 200 -
+2026-06-15 21:07:26,509 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,526 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/logo.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,527 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/ex1_before.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,831 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/ex1_after.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,834 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/ex2_before.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,866 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/ex2_after.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,890 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,987 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/ex3_before.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:26,994 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:26] "[36mGET /static/images/examples/ex3_after.png HTTP/1.1[0m" 304 -
+2026-06-15 21:07:27,350 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:27] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:27,687 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:27] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:27,710 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:27] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:27,893 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-15 21:07:28,729 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:28] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:28,753 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:28] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:31,287 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:31] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 21:07:31,302 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 21:07:31] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -

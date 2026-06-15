@@ -1,32 +1,356 @@
-/* Custom styles to supplement Tailwind */
+/* Modern, Premium UI/UX Design System for AquaVision AI */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-dark-deep: #030712;
+    --bg-dark-surface: rgba(17, 24, 39, 0.65);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --border-glass-focus: rgba(34, 211, 238, 0.3);
+    --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.25);
+    --glow-purple: 0 0 20px rgba(168, 85, 247, 0.25);
+    --glow-emerald: 0 0 20px rgba(16, 185, 129, 0.25);
+    --glow-blue: 0 0 20px rgba(59, 130, 246, 0.25);
+}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #0f172a; 
+    background: #020617; 
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #334155; 
-    border-radius: 4px;
+    background: #1e293b; 
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #475569; 
+    background: #334155; 
+}
+
+/* Deep Ocean Animated Background */
+.ocean-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    overflow: hidden;
+    background: radial-gradient(ellipse at top, #0b2545 0%, #001020 70%, #000814 100%);
+}
+
+/* Underwater Sun Rays Caustics */
+.ocean-rays {
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+        circle at 50% 0%,
+        rgba(34, 211, 238, 0.07) 0%,
+        rgba(59, 130, 246, 0.03) 40%,
+        transparent 70%
+    );
+    filter: blur(40px);
+    transform-origin: top center;
+    animation: light-rays 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes light-rays {
+    0% {
+        transform: rotate(-12deg) scale(1);
+    }
+    100% {
+        transform: rotate(12deg) scale(1.15);
+    }
+}
+
+/* Floating Ambient Particles (Bubbles) */
+.bubble-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -5;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.3) 0%, rgba(34, 211, 238, 0.08) 70%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(34, 211, 238, 0.1);
+    animation: float-bubble 22s linear infinite;
+}
+
+@keyframes float-bubble {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(80px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Glassmorphism Styling */
+.glass-panel {
+    background: var(--bg-dark-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Glow Effects */
+.glow-cyan {
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+}
+.glow-purple {
+    box-shadow: 0 0 25px rgba(147, 51, 234, 0.15);
+}
+.glow-emerald {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+}
+.glow-blue {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.15);
+}
+
+/* Floating UI card states */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-lift:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.45);
 }
 
 /* Image Comparison Slider customization */
 img-comparison-slider {
     --divider-width: 2px;
     --divider-color: #22d3ee;
-    --default-handle-width: 50px;
-    --default-handle-shadow: 0px 0px 20px rgba(34, 211, 238, 0.5);
+    --default-handle-width: 44px;
+    --default-handle-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
 }
 
-.focus-ring:focus {
-    outline: 2px solid #22d3ee;
-    outline-offset: 2px;
+img-comparison-slider [slot="handle"] {
+    width: 44px;
+    height: 44px;
+    background: #020617;
+    border: 2px solid #22d3ee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #22d3ee;
+    cursor: col-resize;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+    transition: transform 0.2s;
 }
+
+img-comparison-slider:hover [slot="handle"] {
+    transform: scale(1.1);
+}
+
+/* Sonar Scan Loading Ripple */
+.sonar-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.sonar-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(34, 211, 238, 0.15);
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    opacity: 0;
+    animation: sonar 2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+
+.sonar-wave:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.sonar-wave:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@keyframes sonar {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Custom Interactive Switches */
+.switch-control {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.switch-indicator {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Typography styles matching Jakarta & Outfit */
+.font-heading {
+    font-family: 'Outfit', sans-serif;
+}
+.font-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Pulsing scanner line animation for preview container */
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+    left: 0;
+    z-index: 20;
+    opacity: 0.8;
+    animation: scan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        top: 0%;
+    }
+    50% {
+        top: 100%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+/* Grid overlay background to simulate digital depth scanner mapping */
+.sonar-grid {
+    background-size: 30px 30px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Background Swimming Fauna & Flora */
+
+@keyframes swim-rtl {
+    0% {
+        transform: translate3d(110vw, var(--y-start, 20vh), 0) scaleX(-1) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(50vw, calc(var(--y-start, 20vh) - 30px), 0) scaleX(-1) rotate(-4deg);
+    }
+    100% {
+        transform: translate3d(-15vw, var(--y-start, 20vh), 0) scaleX(-1) rotate(0deg);
+    }
+}
+
+@keyframes swim-ltr {
+    0% {
+        transform: translate3d(-15vw, var(--y-start, 40vh), 0) scaleX(1) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(50vw, calc(var(--y-start, 40vh) + 30px), 0) scaleX(1) rotate(4deg);
+    }
+    100% {
+        transform: translate3d(110vw, var(--y-start, 40vh), 0) scaleX(1) rotate(0deg);
+    }
+}
+
+@keyframes jelly-rise {
+    0% {
+        transform: translate3d(var(--x-pos, 30vw), 105vh, 0) scale(0.9) scaleY(1.1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.35;
+    }
+    40% {
+        transform: translate3d(calc(var(--x-pos, 30vw) + 30px), 60vh, 0) scale(1.05) scaleY(0.9);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate3d(calc(var(--x-pos, 30vw) + 10px), 48vh, 0) scale(0.9) scaleY(1.15);
+    }
+    80% {
+        transform: translate3d(calc(var(--x-pos, 30vw) - 20px), 15vh, 0) scale(1) scaleY(0.95);
+        opacity: 0.35;
+    }
+    100% {
+        transform: translate3d(var(--x-pos, 30vw), -10vh, 0) scale(0.9);
+        opacity: 0;
+    }
+}
+
+.swim-fish-rtl {
+    position: absolute;
+    pointer-events: none;
+    z-index: -6;
+    animation: swim-rtl var(--duration, 28s) linear infinite;
+    animation-delay: var(--delay, 0s);
+    color: rgba(6, 182, 212, 0.22); /* Cyan semi-transparent silhouette */
+    fill: currentColor;
+}
+
+.swim-fish-ltr {
+    position: absolute;
+    pointer-events: none;
+    z-index: -6;
+    animation: swim-ltr var(--duration, 32s) linear infinite;
+    animation-delay: var(--delay, 0s);
+    color: rgba(59, 130, 246, 0.18); /* Blue semi-transparent silhouette */
+    fill: currentColor;
+}
+
+.jelly-float {
+    position: absolute;
+    pointer-events: none;
+    z-index: -7;
+    animation: jelly-rise var(--duration, 40s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    color: rgba(147, 51, 234, 0.2); /* Purple/pink semi-transparent silhouette */
+    fill: currentColor;
+}
+

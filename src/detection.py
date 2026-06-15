@@ -7,7 +7,13 @@ class DetectionService:
         Initialize the YOLO-World model for open-vocabulary detection.
         """
         # Lazy import to avoid loading heavy torch/ultralytics libraries unless needed
-        from ultralytics import YOLO
+        try:
+            from ultralytics import YOLO
+        except ImportError:
+            raise ImportError(
+                "The 'ultralytics' package is not installed. "
+                "Please install it using 'pip install ultralytics' to enable object detection."
+            )
         
         # This will download the weights if not present
         self.model = YOLO(model_path)

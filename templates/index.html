@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Underwater Image Enhancement</title>
+    <title>AquaVision AI - Deep Blue Underwater Image Enhancement</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Image Comparison Slider Component -->
     <script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js"></script>
@@ -19,584 +32,686 @@
     </script>
 </head>
 
-<body class="bg-slate-900 text-white font-['Inter'] antialiased" x-data="app()">
+<body class="text-white antialiased min-h-screen flex flex-col relative sonar-grid font-body" x-data="app()">
 
-    <!-- Navbar -->
-    <nav class="border-b border-slate-700 bg-slate-800/50 backdrop-blur-md sticky top-0 z-50">
+    <!-- Deep Ocean Animated Background & Light Caustics -->
+    <div class="ocean-bg">
+        <div class="ocean-rays"></div>
+        
+        <!-- Ambient Swimming Fauna (Fish, Turtles, Jellyfish) -->
+        <!-- Fish RTL 1 -->
+        <svg class="swim-fish-rtl" style="--y-start: 12vh; --duration: 26s; --delay: 0s; width: 50px; height: 25px;" viewBox="0 0 100 50">
+            <path d="M10 25 C30 8, 70 8, 85 22 L95 12 L95 38 L85 28 C70 42, 30 42, 10 25 Z" />
+            <path d="M45 14 C52 2, 58 6, 54 16 Z" />
+            <path d="M50 36 C56 46, 60 43, 56 34 Z" />
+        </svg>
+
+        <!-- Fish RTL 2 -->
+        <svg class="swim-fish-rtl" style="--y-start: 62vh; --duration: 32s; --delay: 6s; width: 40px; height: 20px;" viewBox="0 0 100 50">
+            <path d="M10 25 C30 8, 70 8, 85 22 L95 12 L95 38 L85 28 C70 42, 30 42, 10 25 Z" />
+            <path d="M45 14 C52 2, 58 6, 54 16 Z" />
+        </svg>
+
+        <!-- Sea Turtle RTL -->
+        <svg class="swim-fish-rtl" style="--y-start: 32vh; --duration: 48s; --delay: 12s; width: 90px; height: 60px;" viewBox="0 0 120 80">
+            <ellipse cx="60" cy="40" rx="30" ry="22" />
+            <path d="M90 40 C98 35, 102 38, 105 40 C102 42, 98 45, 90 40 Z" />
+            <path d="M75 25 C82 5, 75 -2, 60 10 C65 18, 70 22, 75 25 Z" />
+            <path d="M75 55 C82 75, 75 82, 60 70 C65 62, 70 58, 75 55 Z" />
+            <path d="M40 22 C35 10, 30 12, 35 25 Z" />
+            <path d="M40 58 C35 70, 30 68, 35 55 Z" />
+        </svg>
+
+        <!-- Fish LTR 1 -->
+        <svg class="swim-fish-ltr" style="--y-start: 22vh; --duration: 30s; --delay: 3s; width: 60px; height: 30px;" viewBox="0 0 100 50">
+            <path d="M10 25 C30 8, 70 8, 85 22 L95 12 L95 38 L85 28 C70 42, 30 42, 10 25 Z" />
+            <path d="M45 14 C52 2, 58 6, 54 16 Z" />
+            <path d="M50 36 C56 46, 60 43, 56 34 Z" />
+        </svg>
+
+        <!-- Fish LTR 2 -->
+        <svg class="swim-fish-ltr" style="--y-start: 78vh; --duration: 25s; --delay: 8s; width: 35px; height: 18px;" viewBox="0 0 100 50">
+            <path d="M10 25 C30 8, 70 8, 85 22 L95 12 L95 38 L85 28 C70 42, 30 42, 10 25 Z" />
+        </svg>
+
+        <!-- Jellyfish 1 (Left) -->
+        <svg class="jelly-float" style="--x-pos: 12vw; --duration: 44s; --delay: 2s; width: 45px; height: 75px;" viewBox="0 0 60 100">
+            <path d="M10 40 C10 12, 50 12, 50 40 C45 42, 35 38, 30 40 C25 38, 15 42, 10 40 Z" />
+            <path d="M20 40 Q13 60, 22 80 T18 100" fill="none" stroke="currentColor" stroke-width="1.8" />
+            <path d="M30 40 Q35 60, 28 82 T32 100" fill="none" stroke="currentColor" stroke-width="1.2" />
+            <path d="M40 40 Q47 60, 38 80 T42 100" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+
+        <!-- Jellyfish 2 (Right) -->
+        <svg class="jelly-float" style="--x-pos: 85vw; --duration: 50s; --delay: 10s; width: 35px; height: 60px;" viewBox="0 0 60 100">
+            <path d="M10 40 C10 12, 50 12, 50 40 C45 42, 35 38, 30 40 C25 38, 15 42, 10 40 Z" />
+            <path d="M20 40 Q13 60, 22 80 T18 100" fill="none" stroke="currentColor" stroke-width="1.2" />
+            <path d="M30 40 Q35 60, 28 82 T32 100" fill="none" stroke="currentColor" stroke-width="1" />
+            <path d="M40 40 Q47 60, 38 80 T42 100" fill="none" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+
+        <!-- Floating Bubbles -->
+        <div class="bubble-container">
+            <div class="bubble" style="left: 5%; width: 12px; height: 12px; animation-delay: 0s; animation-duration: 16s;"></div>
+            <div class="bubble" style="left: 15%; width: 22px; height: 22px; animation-delay: 3s; animation-duration: 20s;"></div>
+            <div class="bubble" style="left: 28%; width: 8px; height: 8px; animation-delay: 1s; animation-duration: 14s;"></div>
+            <div class="bubble" style="left: 35%; width: 32px; height: 32px; animation-delay: 6s; animation-duration: 25s;"></div>
+            <div class="bubble" style="left: 50%; width: 16px; height: 16px; animation-delay: 2s; animation-duration: 18s;"></div>
+            <div class="bubble" style="left: 65%; width: 26px; height: 26px; animation-delay: 8s; animation-duration: 22s;"></div>
+            <div class="bubble" style="left: 78%; width: 10px; height: 10px; animation-delay: 4s; animation-duration: 15s;"></div>
+            <div class="bubble" style="left: 88%; width: 20px; height: 20px; animation-delay: 11s; animation-duration: 21s;"></div>
+            <div class="bubble" style="left: 94%; width: 14px; height: 14px; animation-delay: 5s; animation-duration: 17s;"></div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="border-b border-white/5 bg-slate-950/40 backdrop-blur-xl sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <span
-                        class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <!-- Scanning HUD Brand Logo -->
+                    <div class="relative w-9 h-9 flex items-center justify-center bg-cyan-950/40 border border-cyan-500/30 rounded-xl shadow-lg shadow-cyan-500/10">
+                        <div class="absolute inset-0 rounded-xl border border-cyan-400/30 border-dashed animate-[spin_12s_linear_infinite]"></div>
+                        <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-extrabold font-heading bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent tracking-wide">
                         AquaVision AI
                     </span>
                 </div>
-                <div class="flex items-center gap-6">
-                    <!-- Auth links removed -->
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 text-xs text-emerald-400 font-semibold shadow-sm backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Scanner Active</span>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
 
         <!-- Hero Section -->
-        <div class="text-center mb-8" x-show="!results">
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-2">
-                Reveal the <span class="text-cyan-400">Deep Blue</span>
+        <div class="text-center mb-12" x-show="!results">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 font-heading leading-tight">
+                Reveal the <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Deep Blue</span>
             </h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
-                Advanced underwater image enhancement using DSP filters and Multiscale Fusion.
-                Restore color, contrast, and clarity instantly.
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Advanced marine vision suite utilizing multi-scale fusion & depth analysis. Restore clarity, reconstruct colors, and locate ocean life instantly.
             </p>
 
-            <!-- Upload & Camera Options -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <!-- File Upload -->
-                <div class="border-2 border-dashed border-slate-600 rounded-2xl p-6 hover:border-cyan-400 hover:bg-slate-800/50 transition cursor-pointer relative group flex flex-col items-center justify-center h-48"
+            <!-- Upload & Camera Panels -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <!-- Drop / File Upload -->
+                <div class="glass-panel hover-lift border border-white/5 rounded-3xl p-8 hover:border-cyan-500/40 cursor-pointer relative group flex flex-col items-center justify-center h-56 bg-slate-950/20 shadow-2xl"
                     @dragover.prevent="dragover = true" @dragleave.prevent="dragover = false"
                     @drop.prevent="handleDrop($event)"
-                    :class="{ 'border-cyan-400 bg-slate-800/50': dragover, 'opacity-50 pointer-events-none': loading }">
+                    :class="{ 'border-cyan-400/60 bg-slate-950/40 shadow-[0_0_30px_rgba(6,182,212,0.15)]': dragover, 'opacity-50 pointer-events-none': loading }">
                     <input type="file" id="fileInput" class="hidden" @change="handleFile($event)" accept="image/*"
                         :disabled="loading">
                     <label for="fileInput"
                         class="cursor-pointer flex flex-col items-center justify-center w-full h-full">
-                        <div class="p-3 bg-slate-800 rounded-full mb-3 group-hover:scale-110 transition">
+                        <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl mb-4 group-hover:scale-110 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]">
                             <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
                                 </path>
                             </svg>
                         </div>
-                        <span class="text-base font-medium text-slate-200">Upload from File</span>
-                        <span class="text-xs text-slate-500 mt-1">Drag & drop or click</span>
+                        <span class="text-lg font-bold font-heading text-slate-100 group-hover:text-cyan-300 transition-colors">Import Image Scan</span>
+                        <span class="text-xs text-slate-400 mt-1">Drag & drop or click to browse</span>
                     </label>
                 </div>
 
-                <!-- Camera Capture -->
+                <!-- Live Camera Input -->
                 <button @click="startCamera()" :disabled="loading"
-                    class="border-2 border-dashed border-slate-600 rounded-2xl p-6 hover:border-purple-400 hover:bg-slate-800/50 transition cursor-pointer relative group flex flex-col items-center justify-center h-48"
+                    class="glass-panel hover-lift border border-white/5 rounded-3xl p-8 hover:border-purple-500/40 cursor-pointer relative group flex flex-col items-center justify-center h-56 bg-slate-950/20 shadow-2xl text-center"
                     :class="{'opacity-50 cursor-not-allowed': loading}">
-                    <div class="p-3 bg-slate-800 rounded-full mb-3 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl mb-4 group-hover:scale-110 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+                        <svg class="w-8 h-8 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <span class="text-base font-medium text-slate-200">Capture from Camera</span>
-                    <span class="text-xs text-slate-500 mt-1">Take a photo now</span>
+                    <span class="text-lg font-bold font-heading text-slate-100 group-hover:text-purple-300 transition-colors">Underwater Camera Feed</span>
+                    <span class="text-xs text-slate-400 mt-1">Capture direct sample snapshot</span>
                 </button>
             </div>
-
         </div>
 
-        <!-- Pipeline Control Panel -->
-        <div class="mb-10 max-w-5xl mx-auto" x-show="!results">
-            <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 shadow-xl">
-                <div class="text-center mb-6">
-                    <h2
-                        class="text-xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                        Adaptive Pipeline Configuration</h2>
-                    <p class="text-sm text-slate-400">Enable/Disable enhancement modules for specific underwater
-                        conditions</p>
+        <!-- Adaptive Pipeline Configuration Dashboard -->
+        <div class="mb-14 max-w-5xl mx-auto" x-show="!results">
+            <div class="glass-panel rounded-3xl p-8 border border-white/5 shadow-2xl relative overflow-hidden bg-slate-950/25">
+                <div class="text-center mb-8 relative z-10">
+                    <h2 class="text-2xl font-bold font-heading bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                        Adaptive Vision Pipeline Configuration
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">Fine-tune dynamic algorithmic modules for custom marine scattering conditions</p>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" :class="{'opacity-50 pointer-events-none': loading}">
-                    <!-- Toggle: Histogram Stretching -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 relative z-10" :class="{'opacity-50 pointer-events-none': loading}">
+                    <!-- Module: Adaptive Contrast -->
                     <div @click="toggleModule('stretch')"
-                        class="cursor-pointer group relative p-4 rounded-xl border transition-all duration-300"
-                        :class="pipelineConfig.stretch ? 'bg-cyan-900/20 border-cyan-500/50' : 'bg-slate-900/50 border-slate-700 opacity-70'">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="w-10 h-6 rounded-full relative transition-colors duration-200"
-                                :class="pipelineConfig.stretch ? 'bg-cyan-500' : 'bg-slate-600'">
-                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-200"
+                        class="cursor-pointer group relative p-5 rounded-2xl border transition-all duration-300 hover-lift bg-slate-950/30"
+                        :class="pipelineConfig.stretch ? 'border-cyan-500/60 shadow-[0_0_20px_rgba(6,182,212,0.15)] bg-cyan-950/10' : 'border-slate-800/80 opacity-70 hover:opacity-100 hover:border-slate-700'">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-6 rounded-full relative transition-colors duration-300"
+                                :class="pipelineConfig.stretch ? 'bg-cyan-500' : 'bg-slate-700'">
+                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-300"
                                     :class="pipelineConfig.stretch ? 'translate-x-4' : 'translate-x-0'"></div>
                             </div>
-                            <svg class="w-6 h-6" :class="pipelineConfig.stretch ? 'text-cyan-400' : 'text-slate-500'"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>
+                            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800" :class="pipelineConfig.stretch ? 'text-cyan-400' : 'text-slate-500'">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="font-bold text-sm text-slate-200">Adaptive Contrast</h3>
-                        <p class="text-xs text-slate-400 mt-1">Histogram Stretching</p>
+                        <h3 class="font-bold font-heading text-slate-100">Adaptive Contrast</h3>
+                        <p class="text-xs text-slate-400 mt-1">Histogram stretching removes backscatter haze</p>
                     </div>
 
-                    <!-- Toggle: White Balance -->
+                    <!-- Module: Color Correction -->
                     <div @click="toggleModule('wb')"
-                        class="cursor-pointer group relative p-4 rounded-xl border transition-all duration-300"
-                        :class="pipelineConfig.wb ? 'bg-teal-900/20 border-teal-500/50' : 'bg-slate-900/50 border-slate-700 opacity-70'">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="w-10 h-6 rounded-full relative transition-colors duration-200"
-                                :class="pipelineConfig.wb ? 'bg-teal-500' : 'bg-slate-600'">
-                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-200"
+                        class="cursor-pointer group relative p-5 rounded-2xl border transition-all duration-300 hover-lift bg-slate-950/30"
+                        :class="pipelineConfig.wb ? 'border-teal-500/60 shadow-[0_0_20px_rgba(20,184,166,0.15)] bg-teal-950/10' : 'border-slate-800/80 opacity-70 hover:opacity-100 hover:border-slate-700'">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-6 rounded-full relative transition-colors duration-300"
+                                :class="pipelineConfig.wb ? 'bg-teal-500' : 'bg-slate-700'">
+                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-300"
                                     :class="pipelineConfig.wb ? 'translate-x-4' : 'translate-x-0'"></div>
                             </div>
-                            <svg class="w-6 h-6" :class="pipelineConfig.wb ? 'text-teal-400' : 'text-slate-500'"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.343L14.657 8l-1.657 1.343L11 7.343z" />
-                            </svg>
+                            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800" :class="pipelineConfig.wb ? 'text-teal-400' : 'text-slate-500'">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.343L14.657 8l-1.657 1.343L11 7.343z" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="font-bold text-sm text-slate-200">Color Correction</h3>
-                        <p class="text-xs text-slate-400 mt-1">Adaptive Gray World</p>
+                        <h3 class="font-bold font-heading text-slate-100">Color Correction</h3>
+                        <p class="text-xs text-slate-400 mt-1">Adaptive Gray World mitigates blue-green tinting</p>
                     </div>
 
-                    <!-- Toggle: Gamma -->
+                    <!-- Module: Adaptive Gamma -->
                     <div @click="toggleModule('gamma')"
-                        class="cursor-pointer group relative p-4 rounded-xl border transition-all duration-300"
-                        :class="pipelineConfig.gamma ? 'bg-purple-900/20 border-purple-500/50' : 'bg-slate-900/50 border-slate-700 opacity-70'">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="w-10 h-6 rounded-full relative transition-colors duration-200"
-                                :class="pipelineConfig.gamma ? 'bg-purple-500' : 'bg-slate-600'">
-                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-200"
+                        class="cursor-pointer group relative p-5 rounded-2xl border transition-all duration-300 hover-lift bg-slate-950/30"
+                        :class="pipelineConfig.gamma ? 'border-purple-500/60 shadow-[0_0_20px_rgba(168,85,247,0.15)] bg-purple-950/10' : 'border-slate-800/80 opacity-70 hover:opacity-100 hover:border-slate-700'">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-6 rounded-full relative transition-colors duration-300"
+                                :class="pipelineConfig.gamma ? 'bg-purple-500' : 'bg-slate-700'">
+                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-300"
                                     :class="pipelineConfig.gamma ? 'translate-x-4' : 'translate-x-0'"></div>
                             </div>
-                            <svg class="w-6 h-6" :class="pipelineConfig.gamma ? 'text-purple-400' : 'text-slate-500'"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800" :class="pipelineConfig.gamma ? 'text-purple-400' : 'text-slate-500'">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="font-bold text-sm text-slate-200">Adaptive Gamma</h3>
-                        <p class="text-xs text-slate-400 mt-1">Brightness Balance</p>
+                        <h3 class="font-bold font-heading text-slate-100">Adaptive Gamma</h3>
+                        <p class="text-xs text-slate-400 mt-1">Illuminates light-deprived deep water regions</p>
                     </div>
 
-                    <!-- Toggle: Sharpness -->
+                    <!-- Module: Edge Preserve -->
                     <div @click="toggleModule('sharp')"
-                        class="cursor-pointer group relative p-4 rounded-xl border transition-all duration-300"
-                        :class="pipelineConfig.sharp ? 'bg-blue-900/20 border-blue-500/50' : 'bg-slate-900/50 border-slate-700 opacity-70'">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="w-10 h-6 rounded-full relative transition-colors duration-200"
-                                :class="pipelineConfig.sharp ? 'bg-blue-500' : 'bg-slate-600'">
-                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-200"
+                        class="cursor-pointer group relative p-5 rounded-2xl border transition-all duration-300 hover-lift bg-slate-950/30"
+                        :class="pipelineConfig.sharp ? 'border-blue-500/60 shadow-[0_0_20px_rgba(59,130,246,0.15)] bg-blue-950/10' : 'border-slate-800/80 opacity-70 hover:opacity-100 hover:border-slate-700'">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-6 rounded-full relative transition-colors duration-300"
+                                :class="pipelineConfig.sharp ? 'bg-blue-500' : 'bg-slate-700'">
+                                <div class="absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform duration-300"
                                     :class="pipelineConfig.sharp ? 'translate-x-4' : 'translate-x-0'"></div>
                             </div>
-                            <svg class="w-6 h-6" :class="pipelineConfig.sharp ? 'text-blue-400' : 'text-slate-500'"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800" :class="pipelineConfig.sharp ? 'text-blue-400' : 'text-slate-500'">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="font-bold text-sm text-slate-200">Edge Preserve</h3>
-                        <p class="text-xs text-slate-400 mt-1">Guided Filter</p>
+                        <h3 class="font-bold font-heading text-slate-100">Edge Preserve</h3>
+                        <p class="text-xs text-slate-400 mt-1">Guided filter enhances target boundaries</p>
                     </div>
                 </div>
 
-                <!-- Visual Pipeline Flow Indicator -->
-                <div class="mt-8 relative hidden md:block">
-                    <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-700 -translate-y-1/2 z-0"></div>
-                    <!-- Dynamic Line -->
+                <!-- Visual Pipeline Flow Indicator HUD -->
+                <div class="mt-10 relative hidden md:block">
+                    <div class="absolute top-1/2 left-0 w-full h-[2px] bg-slate-800 -translate-y-1/2 z-0"></div>
+                    
                     <div class="flex justify-between relative z-10 px-4">
-
-                        <!-- Node: Input -->
+                        <!-- Node: Raw Input -->
                         <div class="flex flex-col items-center gap-2">
-                            <div
-                                class="w-8 h-8 rounded-full bg-slate-200 text-slate-900 flex items-center justify-center font-bold text-xs ring-4 ring-slate-800">
-                                IN</div>
-                            <span class="text-xs text-slate-500">Raw</span>
-                        </div>
-
-                        <!-- Node 1: Stretch -->
-                        <div class="flex flex-col items-center gap-2" :class="{'opacity-40': !pipelineConfig.stretch}">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ring-4 ring-slate-800 transition-colors"
-                                :class="pipelineConfig.stretch ? 'bg-cyan-500 text-white' : 'bg-slate-600 text-slate-300'">
-                                1</div>
-                            <span class="text-xs font-medium"
-                                :class="pipelineConfig.stretch ? 'text-cyan-400' : 'text-slate-600'">Contrast</span>
-                        </div>
-
-                        <!-- Node 2: WB -->
-                        <div class="flex flex-col items-center gap-2" :class="{'opacity-40': !pipelineConfig.wb}">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ring-4 ring-slate-800 transition-colors"
-                                :class="pipelineConfig.wb ? 'bg-teal-500 text-white' : 'bg-slate-600 text-slate-300'">2
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center font-bold text-xs ring-4 ring-slate-950 shadow-md">
+                                IN
                             </div>
-                            <span class="text-xs font-medium"
-                                :class="pipelineConfig.wb ? 'text-teal-400' : 'text-slate-600'">Color</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Raw Scan</span>
+                        </div>
+
+                        <!-- Node 1: Contrast -->
+                        <div class="flex flex-col items-center gap-2 transition-all duration-300" :class="{'opacity-40 scale-90': !pipelineConfig.stretch}">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xs ring-4 ring-slate-950 border transition-all duration-300 shadow-md"
+                                :class="pipelineConfig.stretch ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-cyan-500/20' : 'bg-slate-900 border-slate-800 text-slate-600'">
+                                1
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider" :class="pipelineConfig.stretch ? 'text-cyan-400' : 'text-slate-600'">Contrast</span>
+                        </div>
+
+                        <!-- Node 2: Color -->
+                        <div class="flex flex-col items-center gap-2 transition-all duration-300" :class="{'opacity-40 scale-90': !pipelineConfig.wb}">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xs ring-4 ring-slate-950 border transition-all duration-300 shadow-md"
+                                :class="pipelineConfig.wb ? 'bg-teal-500/20 border-teal-400 text-teal-300 shadow-teal-500/20' : 'bg-slate-900 border-slate-800 text-slate-600'">
+                                2
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider" :class="pipelineConfig.wb ? 'text-teal-400' : 'text-slate-600'">Color</span>
                         </div>
 
                         <!-- Node 3: Gamma -->
-                        <div class="flex flex-col items-center gap-2" :class="{'opacity-40': !pipelineConfig.gamma}">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ring-4 ring-slate-800 transition-colors"
-                                :class="pipelineConfig.gamma ? 'bg-purple-500 text-white' : 'bg-slate-600 text-slate-300'">
-                                3</div>
-                            <span class="text-xs font-medium"
-                                :class="pipelineConfig.gamma ? 'text-purple-400' : 'text-slate-600'">Gamma</span>
+                        <div class="flex flex-col items-center gap-2 transition-all duration-300" :class="{'opacity-40 scale-90': !pipelineConfig.gamma}">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xs ring-4 ring-slate-950 border transition-all duration-300 shadow-md"
+                                :class="pipelineConfig.gamma ? 'bg-purple-500/20 border-purple-400 text-purple-300 shadow-purple-500/20' : 'bg-slate-900 border-slate-800 text-slate-600'">
+                                3
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider" :class="pipelineConfig.gamma ? 'text-purple-400' : 'text-slate-600'">Gamma</span>
                         </div>
 
                         <!-- Node 4: Sharp -->
-                        <div class="flex flex-col items-center gap-2" :class="{'opacity-40': !pipelineConfig.sharp}">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ring-4 ring-slate-800 transition-colors"
-                                :class="pipelineConfig.sharp ? 'bg-blue-500 text-white' : 'bg-slate-600 text-slate-300'">
-                                4</div>
-                            <span class="text-xs font-medium"
-                                :class="pipelineConfig.sharp ? 'text-blue-400' : 'text-slate-600'">Sharp</span>
+                        <div class="flex flex-col items-center gap-2 transition-all duration-300" :class="{'opacity-40 scale-90': !pipelineConfig.sharp}">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xs ring-4 ring-slate-950 border transition-all duration-300 shadow-md"
+                                :class="pipelineConfig.sharp ? 'bg-blue-500/20 border-blue-400 text-blue-300 shadow-blue-500/20' : 'bg-slate-900 border-slate-800 text-slate-600'">
+                                4
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider" :class="pipelineConfig.sharp ? 'text-blue-400' : 'text-slate-600'">Edge</span>
                         </div>
 
-                        <!-- Node: Fusion -->
+                        <!-- Node: Fusion Output -->
                         <div class="flex flex-col items-center gap-2">
-                            <div
-                                class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs ring-4 ring-slate-800">
-                                F</div>
-                            <span class="text-xs text-emerald-400">Fusion</span>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400 text-emerald-300 flex items-center justify-center font-bold text-xs ring-4 ring-slate-950 shadow-lg shadow-emerald-500/10">
+                                OUT
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Fusion</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mb-10" x-show="!results">
-            <h2 class="text-2xl font-bold text-center mb-6">See the Difference</h2>
+
+        <!-- Demonstration Carousel Section -->
+        <div class="mb-16" x-show="!results">
+            <h2 class="text-2xl font-bold text-center mb-8 font-heading">Interactive Enhancements Dashboard</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Example 1 -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
-                    <div class="aspect-square bg-black relative">
+                <!-- Card 1 -->
+                <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl border border-white/5 flex flex-col h-full bg-slate-950/20">
+                    <div class="aspect-square bg-slate-950 relative border-b border-white/5">
                         <img-comparison-slider class="w-full h-full object-cover focus:outline-none">
-                            <img slot="first" src="/static/images/examples/ex1_before.png"
-                                class="w-full h-full object-cover" />
-                            <img slot="second" src="/static/images/examples/ex1_after.png"
-                                class="w-full h-full object-cover" />
+                            <img slot="first" src="/static/images/examples/ex1_before.png" class="w-full h-full object-cover" />
+                            <img slot="second" src="/static/images/examples/ex1_after.png" class="w-full h-full object-cover" />
+                            <div slot="handle">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                            </div>
                         </img-comparison-slider>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Coral Reef Restoration</h3>
-                        <p class="text-slate-400 text-sm">Restores vibrant colors and removes blue haze from coral
-                            ecosystems.</p>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-heading mb-2 text-cyan-400">Coral Reef Restoration</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">Restores loss of red wavelength, correcting color profile and backscatter haze from fragile marine ecosystems.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Example 2 -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
-                    <div class="aspect-square bg-black relative">
+                <!-- Card 2 -->
+                <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl border border-white/5 flex flex-col h-full bg-slate-950/20">
+                    <div class="aspect-square bg-slate-950 relative border-b border-white/5">
                         <img-comparison-slider class="w-full h-full object-cover focus:outline-none">
-                            <img slot="first" src="/static/images/examples/ex2_before.png"
-                                class="w-full h-full object-cover" />
-                            <img slot="second" src="/static/images/examples/ex2_after.png"
-                                class="w-full h-full object-cover" />
+                            <img slot="first" src="/static/images/examples/ex2_before.png" class="w-full h-full object-cover" />
+                            <img slot="second" src="/static/images/examples/ex2_after.png" class="w-full h-full object-cover" />
+                            <div slot="handle">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                            </div>
                         </img-comparison-slider>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Marine Life Clarity</h3>
-                        <p class="text-slate-400 text-sm">Enhances contrast to reveal details of marine life like sea
-                            turtles.</p>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-heading mb-2 text-teal-400">Marine Life Visibility</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">Improves relative contrast and boundaries to aid detection of marine life even in murky depths.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Example 3 -->
-                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
-                    <div class="aspect-square bg-black relative">
+                <!-- Card 3 -->
+                <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl border border-white/5 flex flex-col h-full bg-slate-950/20">
+                    <div class="aspect-square bg-slate-950 relative border-b border-white/5">
                         <img-comparison-slider class="w-full h-full object-cover focus:outline-none">
-                            <img slot="first" src="/static/images/examples/ex3_before.png"
-                                class="w-full h-full object-cover" />
-                            <img slot="second" src="/static/images/examples/ex3_after.png"
-                                class="w-full h-full object-cover" />
+                            <img slot="first" src="/static/images/examples/ex3_before.png" class="w-full h-full object-cover" />
+                            <img slot="second" src="/static/images/examples/ex3_after.png" class="w-full h-full object-cover" />
+                            <div slot="handle">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                            </div>
                         </img-comparison-slider>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-cyan-400">Deep Sea Dehazing</h3>
-                        <p class="text-slate-400 text-sm">Effectively removes scattering and restores visibility in
-                            rocky terrains.</p>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-heading mb-2 text-purple-400">Deep Sea Dehazing</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">Combats light scatter parameters to reconstruct structure and features of bottom sediment/rocks.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Loading Spinner -->
-        <div x-show="loading"
-            class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50">
+        <!-- High-fidelity Sonar Scan Loading Overlay -->
+        <div x-show="loading" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md flex items-center justify-center z-[100]" style="display: none;">
             <div class="text-center">
-                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400 mx-auto mb-4">
+                <div class="sonar-container mb-6">
+                    <div class="sonar-wave"></div>
+                    <div class="sonar-wave"></div>
+                    <div class="sonar-wave"></div>
+                    <div class="absolute inset-0 m-auto w-12 h-12 rounded-full bg-cyan-500/20 border border-cyan-400 flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+                        <svg class="w-6 h-6 text-cyan-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                    </div>
                 </div>
-                <p class="text-xl font-semibold animate-pulse">Running DSP Algorithms...</p>
-                <p class="text-sm text-slate-400">This might take a moment.</p>
+                <p class="text-2xl font-bold font-heading bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent animate-pulse">Running DSP Algorithms...</p>
+                <p class="text-sm text-slate-400 mt-2 font-medium">Reconstructing colors & clarity parameters...</p>
             </div>
         </div>
 
-        <!-- Results Section -->
+        <!-- Results Display Panel -->
         <div x-show="results" style="display: none;" class="mb-20">
 
-            <!-- Interactive Pipeline Tweaks (Results View) -->
-            <div class="mb-8 bg-slate-800/80 backdrop-blur rounded-2xl p-4 border border-slate-700">
-                <div class="flex items-center justify-between mb-2">
-                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider">Active Modules</h3>
-                    <div class="text-xs text-cyan-400" x-show="loading">Processing...</div>
+            <!-- Interactive Settings Tweaks Mixer (Results View) -->
+            <div class="mb-8 glass-panel rounded-3xl p-5 border border-white/5 shadow-xl bg-slate-950/20">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-heading">Algorithmic Channels Mixer</h3>
+                    <div class="flex items-center gap-2 text-xs text-cyan-400" x-show="loading">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>Compiling...</span>
+                    </div>
                 </div>
                 <div class="flex flex-wrap gap-3">
                     <button @click="toggleModule('stretch')"
-                        class="px-4 py-2 rounded-lg text-sm font-semibold transition border"
-                        :class="pipelineConfig.stretch ? 'bg-cyan-900/30 border-cyan-500 text-cyan-300' : 'bg-slate-900 border-slate-700 text-slate-500 decoration-slate-600'">
-                        Contrast
-                        <span class="ml-1" x-text="pipelineConfig.stretch ? 'ON' : 'OFF'"></span>
+                        class="px-4 py-2.5 rounded-xl text-sm font-semibold transition border shadow-sm flex items-center gap-2"
+                        :class="pipelineConfig.stretch ? 'bg-cyan-500/10 border-cyan-400 text-cyan-300 shadow-cyan-500/5' : 'bg-slate-900/50 border-slate-800 text-slate-500 hover:text-slate-300'">
+                        <span class="w-2 h-2 rounded-full" :class="pipelineConfig.stretch ? 'bg-cyan-400' : 'bg-slate-700'"></span>
+                        Contrast stretch
                     </button>
                     <button @click="toggleModule('wb')"
-                        class="px-4 py-2 rounded-lg text-sm font-semibold transition border"
-                        :class="pipelineConfig.wb ? 'bg-teal-900/30 border-teal-500 text-teal-300' : 'bg-slate-900 border-slate-700 text-slate-500 decoration-slate-600'">
-                        Color
-                        <span class="ml-1" x-text="pipelineConfig.wb ? 'ON' : 'OFF'"></span>
+                        class="px-4 py-2.5 rounded-xl text-sm font-semibold transition border shadow-sm flex items-center gap-2"
+                        :class="pipelineConfig.wb ? 'bg-teal-500/10 border-teal-400 text-teal-300 shadow-teal-500/5' : 'bg-slate-900/50 border-slate-800 text-slate-500 hover:text-slate-300'">
+                        <span class="w-2 h-2 rounded-full" :class="pipelineConfig.wb ? 'bg-teal-400' : 'bg-slate-700'"></span>
+                        Color balance
                     </button>
                     <button @click="toggleModule('gamma')"
-                        class="px-4 py-2 rounded-lg text-sm font-semibold transition border"
-                        :class="pipelineConfig.gamma ? 'bg-purple-900/30 border-purple-500 text-purple-300' : 'bg-slate-900 border-slate-700 text-slate-500 decoration-slate-600'">
-                        Gamma
-                        <span class="ml-1" x-text="pipelineConfig.gamma ? 'ON' : 'OFF'"></span>
+                        class="px-4 py-2.5 rounded-xl text-sm font-semibold transition border shadow-sm flex items-center gap-2"
+                        :class="pipelineConfig.gamma ? 'bg-purple-500/10 border-purple-400 text-purple-300 shadow-purple-500/5' : 'bg-slate-900/50 border-slate-800 text-slate-500 hover:text-slate-300'">
+                        <span class="w-2 h-2 rounded-full" :class="pipelineConfig.gamma ? 'bg-purple-400' : 'bg-slate-700'"></span>
+                        Gamma correction
                     </button>
                     <button @click="toggleModule('sharp')"
-                        class="px-4 py-2 rounded-lg text-sm font-semibold transition border"
-                        :class="pipelineConfig.sharp ? 'bg-blue-900/30 border-blue-500 text-blue-300' : 'bg-slate-900 border-slate-700 text-slate-500 decoration-slate-600'">
-                        Sharpness
-                        <span class="ml-1" x-text="pipelineConfig.sharp ? 'ON' : 'OFF'"></span>
+                        class="px-4 py-2.5 rounded-xl text-sm font-semibold transition border shadow-sm flex items-center gap-2"
+                        :class="pipelineConfig.sharp ? 'bg-blue-500/10 border-blue-400 text-blue-300 shadow-blue-500/5' : 'bg-slate-900/50 border-slate-800 text-slate-500 hover:text-slate-300'">
+                        <span class="w-2 h-2 rounded-full" :class="pipelineConfig.sharp ? 'bg-blue-400' : 'bg-slate-700'"></span>
+                        Edge sharpener
                     </button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                <!-- Left Column: Visuals (Col Span 2) -->
+                <!-- Left/Center Column: Main Output Visualizer (Col Span 2) -->
                 <div class="lg:col-span-2 space-y-6">
 
-                    <!-- Toggle View -->
-                    <div class="flex justify-center lg:justify-start mb-4">
-                        <div class="bg-slate-800 p-1 rounded-full flex gap-2 border border-slate-700">
+                    <!-- Sliding Pill Selector Tabs -->
+                    <div class="flex justify-center lg:justify-start">
+                        <div class="bg-slate-950/60 p-1.5 rounded-2xl flex gap-2 border border-slate-800/80 shadow-inner w-full sm:w-auto">
                             <button @click="setView('slider')"
-                                :class="{'bg-cyan-500 text-white shadow-lg': !showDetections && !showDepth, 'text-slate-400 hover:text-white': showDetections || showDepth}"
-                                class="px-6 py-2 rounded-full font-medium transition text-sm">
-                                Comparison
+                                :class="{'bg-cyan-500/90 text-white shadow-lg shadow-cyan-600/20': !showDetections && !showDepth, 'text-slate-400 hover:text-white': showDetections || showDepth}"
+                                class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl font-bold transition text-sm font-heading">
+                                Before / After
                             </button>
                             <button @click="setView('detections')"
-                                :class="{'bg-purple-600 text-white shadow-lg': showDetections, 'text-slate-400 hover:text-white': !showDetections}"
-                                class="px-6 py-2 rounded-full font-medium transition text-sm flex items-center gap-2">
+                                :class="{'bg-purple-600/90 text-white shadow-lg shadow-purple-600/20': showDetections, 'text-slate-400 hover:text-white': !showDetections}"
+                                class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl font-bold transition text-sm font-heading flex items-center justify-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
                                 Detections
                             </button>
                             <button @click="setView('depth')"
-                                :class="{'bg-blue-600 text-white shadow-lg': showDepth, 'text-slate-400 hover:text-white': !showDepth}"
-                                class="px-6 py-2 rounded-full font-medium transition text-sm flex items-center gap-2">
+                                :class="{'bg-blue-600/90 text-white shadow-lg shadow-blue-600/20': showDepth, 'text-slate-400 hover:text-white': !showDepth}"
+                                class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl font-bold transition text-sm font-heading flex items-center justify-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                                 </svg>
                                 Depth Map
                             </button>
                         </div>
                     </div>
 
-                    <!-- Visual Container -->
-                    <div class="bg-slate-800 rounded-3xl p-4 shadow-2xl border border-slate-700 min-h-[500px] relative">
-                        <!-- Tooltip for Depth Map -->
+                    <!-- Visual Container Board -->
+                    <div class="glass-panel rounded-3xl p-5 shadow-2xl border border-slate-800/60 min-h-[500px] relative bg-slate-950/10 overflow-hidden">
+                        
+                        <!-- Floating depth scan line for live HUD aesthetic -->
+                        <div class="scan-line" x-show="showDetections || showDepth"></div>
+
+                        <!-- Tooltip for Depth Map Hover -->
                         <div id="depthTooltip"
-                            class="fixed z-[9999] bg-slate-900/90 backdrop-blur border border-slate-600 rounded-lg p-3 shadow-xl pointer-events-none hidden">
-                            <!-- Content injected by JS -->
+                            class="fixed z-[9999] bg-slate-950/95 backdrop-blur-md border border-cyan-500/40 rounded-xl p-3 shadow-2xl pointer-events-none hidden font-heading text-xs">
                         </div>
 
-                        <!-- Comparison Slider View -->
+                        <!-- 1. Comparison Slider Display -->
                         <div x-show="!showDetections && !showDepth" class="transition-opacity duration-300">
-                            <div class="flex justify-between items-center px-4 mb-2">
-                                <span class="text-sm font-bold text-slate-400 uppercase tracking-wider">Before</span>
-                                <span class="text-sm font-bold text-cyan-400 uppercase tracking-wider">After</span>
+                            <div class="flex justify-between items-center px-4 mb-3">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest font-heading">Raw Probe Scan</span>
+                                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest font-heading">Enhanced AI Output</span>
                             </div>
-                            <div class="relative w-full rounded-2xl overflow-hidden bg-black/50">
+                            <div class="relative w-full rounded-2xl overflow-hidden bg-slate-950/40 border border-white/5">
                                 <img-comparison-slider class="w-full focus:outline-none">
                                     <img slot="first"
                                         :src="results?.original ? '/' + results.original + '?' + Date.now() : ''"
                                         class="w-full h-auto block" />
-                                    <!-- Use Base64 if available, otherwise file path -->
                                     <img slot="second"
                                         :src="results?.final_b64 ? results.final_b64 : (results?.final ? '/static/images/results/' + results.final + '?' + Date.now() : '')"
                                         class="w-full h-auto block" />
+                                    <div slot="handle">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                                    </div>
                                 </img-comparison-slider>
                             </div>
                         </div>
 
-                        <!-- Detection View -->
+                        <!-- 2. YOLO Object Detection Display -->
                         <div x-show="showDetections" style="display: none;" class="transition-opacity duration-300">
-                            <!-- Warning when detection is disabled -->
-                            <div x-show="!detectionEnabled" class="flex flex-col items-center justify-center py-12 px-4">
-                                <div class="bg-slate-800 border border-amber-500/30 rounded-2xl p-6 max-w-md text-center shadow-xl backdrop-blur">
-                                    <svg class="w-12 h-12 text-amber-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <!-- Warning Low-Memory Mode -->
+                            <div x-show="!detectionEnabled" class="flex flex-col items-center justify-center py-16 px-6">
+                                <div class="glass-panel border border-amber-500/20 rounded-2xl p-8 max-w-md text-center bg-amber-500/5 shadow-2xl">
+                                    <svg class="w-12 h-12 text-amber-400 mx-auto mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                                     </svg>
-                                    <h4 class="text-base font-bold text-slate-100 mb-1">Detections Unavailable</h4>
-                                    <p class="text-sm text-slate-400">
-                                        Object detection is disabled in this low-memory environment (like Render's Free tier) to prevent server crashes.
+                                    <h4 class="text-lg font-bold font-heading text-slate-100 mb-2">Detections Switched Off</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">
+                                        Object detection model is inactive in low-memory environments (e.g. Render sandbox) to preserve performance parameters.
                                     </p>
-                                    <p class="text-xs text-slate-500 mt-3">
-                                        To enable this feature, host on a larger instance or run locally with <code class="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">ENABLE_DETECTION=true</code>.
+                                    <p class="text-xs text-slate-400 mt-4 border-t border-white/5 pt-4">
+                                        Activate on your local deployment via env setting: <code class="bg-slate-950 px-2 py-1 rounded text-cyan-400 border border-white/5 font-mono">ENABLE_DETECTION=true</code>.
                                     </p>
                                 </div>
                             </div>
 
-                            <!-- Detections content -->
+                            <!-- Detection Map View -->
                             <div x-show="detectionEnabled">
-                                <div
-                                    class="relative w-full rounded-2xl overflow-hidden bg-black/50 aspect-auto text-center">
+                                <div class="relative w-full rounded-2xl overflow-hidden bg-slate-950/40 border border-white/5 aspect-auto text-center">
                                     <div class="relative inline-block w-full">
                                         <img :src="results?.final_b64 ? results.final_b64 : (results?.final ? '/static/images/results/' + results.final + '?' + Date.now() : '')"
                                             class="w-full h-auto block" id="detectionImage" @load="updateBoxes()">
 
                                         <template x-for="det in detections" :key="det.box.join(',')">
-                                            <div class="absolute border-2 border-purple-500 bg-purple-500/10 hover:bg-purple-500/20 transition cursor-help"
+                                            <div class="absolute border-2 border-purple-500 bg-purple-500/10 hover:bg-purple-500/25 transition cursor-help rounded-md"
                                                 :style="getBoxStyle(det.box)">
                                                 <div
-                                                    class="absolute -top-7 left-0 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm whitespace-nowrap">
+                                                    class="absolute -top-7 left-0 bg-purple-600 text-white text-[10px] font-bold font-heading px-2 py-1 rounded shadow-lg whitespace-nowrap border border-purple-400">
                                                     <span x-text="det.label.toUpperCase()"></span>
-                                                    <span class="opacity-75"
-                                                        x-text="Math.round(det.confidence * 100) + '%'"></span>
+                                                    <span class="opacity-90 ml-1" x-text="Math.round(det.confidence * 100) + '%'"></span>
                                                 </div>
                                             </div>
                                         </template>
 
                                         <div x-show="detections.length === 0"
                                             class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                            <div
-                                                class="bg-black/60 backdrop-blur px-6 py-3 rounded-xl text-white font-medium">
-                                                No objects detected</div>
+                                            <div class="bg-slate-950/80 border border-slate-800 backdrop-blur-md px-6 py-3 rounded-2xl text-white font-bold text-sm shadow-2xl">
+                                                Zero anomalies or targets detected in visual field
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="text-center mt-4 text-slate-400 text-sm">
-                                    Detecting: Fish, Coral, Divers, Rocks
+                                <div class="text-center mt-4 text-slate-400 text-xs font-heading tracking-wider">
+                                    TARGET SCOPE: AQUATIC SPECIES / CORALS / DIVERS / OCEAN ANOMALIES
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Depth Map View -->
+                        <!-- 3. Grayscale Depth Map Display -->
                         <div x-show="showDepth" style="display: none;" class="transition-opacity duration-300">
-                            <div class="flex items-start gap-4">
-                                <!-- Legend -->
-                                <div
-                                    class="hidden md:flex flex-col gap-2 bg-slate-900/50 p-3 rounded-xl border border-slate-700 min-w-[100px]">
-                                    <span class="text-xs font-bold text-slate-400 uppercase mb-1">Depth</span>
+                            <div class="flex flex-col md:flex-row gap-5">
+                                <!-- Legend card -->
+                                <div class="flex md:flex-col gap-3 justify-center bg-slate-950/40 p-4 rounded-2xl border border-white/5 md:min-w-[120px]">
+                                    <span class="hidden md:inline text-[10px] font-bold text-slate-400 uppercase tracking-widest font-heading mb-1 text-center">Depth Meter</span>
+                                    
                                     <div class="flex items-center gap-2">
-                                        <div
-                                            class="w-4 h-4 rounded-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]">
-                                        </div>
-                                        <span class="text-xs text-slate-200">Near</span>
+                                        <div class="w-3.5 h-3.5 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)] border border-red-300"></div>
+                                        <span class="text-xs text-slate-300 font-medium font-heading">Near</span>
                                     </div>
                                     <div class="flex items-center gap-2">
-                                        <div class="w-4 h-4 rounded-full bg-yellow-400"></div>
-                                        <span class="text-xs text-slate-200">Mid</span>
+                                        <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.5)] border border-yellow-200"></div>
+                                        <span class="text-xs text-slate-300 font-medium font-heading">Mid Range</span>
                                     </div>
                                     <div class="flex items-center gap-2">
-                                        <div
-                                            class="w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.5)]">
-                                        </div>
-                                        <span class="text-xs text-slate-200">Far</span>
+                                        <div class="w-3.5 h-3.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)] border border-blue-300"></div>
+                                        <span class="text-xs text-slate-300 font-medium font-heading">Far Abyss</span>
                                     </div>
                                 </div>
 
-                                <!-- Map -->
-                                <div
-                                    class="relative w-full rounded-2xl overflow-hidden bg-black/50 aspect-auto cursor-crosshair group">
+                                <!-- Actual Heatmap -->
+                                <div class="relative w-full rounded-2xl overflow-hidden bg-slate-950/40 border border-white/5 aspect-auto cursor-crosshair group flex-grow">
                                     <img :src="results?.depth_map ? '/static/images/results/' + results.depth_map + '?' + Date.now() : ''"
                                         class="w-full h-auto block" @mousemove="handleDepthHover($event)"
                                         @mouseleave="hideDepthTooltip()">
 
-                                    <!-- Mobile Legend Overlay -->
-                                    <div
-                                        class="md:hidden absolute bottom-2 right-2 flex gap-2 bg-black/70 backdrop-blur p-2 rounded-lg text-xs font-bold">
-                                        <span class="text-red-500">Near</span>
-                                        <span class="text-yellow-400">Mid</span>
-                                        <span class="text-blue-500">Far</span>
-                                    </div>
+                                    <!-- HUD Map crosshair design overlay -->
+                                    <div class="absolute inset-0 pointer-events-none border border-cyan-500/10"></div>
                                 </div>
                             </div>
-                            <div class="text-center mt-4 text-slate-400 text-xs max-w-lg mx-auto">
-                                * Relative depth estimation based on red channel attenuation. <br> Red areas indicate
-                                proximity (shallow), while blue areas indicate distance (deep).
+                            <div class="text-center mt-4 text-slate-400 text-[11px] leading-relaxed max-w-lg mx-auto">
+                                * Computed depth mapping using selective green/red channel attenuation parameters. Hover crosshair on map to probe estimated proximity targets.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Controls & Metrics (Col Span 1) -->
+                <!-- Right Column: Control parameters & metrics indicators -->
                 <div class="space-y-6">
 
-                    <!-- Export Card -->
-                    <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 shadow-xl">
-                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
-                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4 4m4 4V4"></path>
-                            </svg>
-                            Export High-Res
-                        </h3>
-                        <div class="space-y-3">
-                            <div>
+                    <!-- Export Actions Card -->
+                    <div class="glass-panel p-6 rounded-3xl border border-white/5 shadow-2xl bg-slate-950/20 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold font-heading mb-4 text-slate-100 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4 4m4 4V4"></path>
+                                </svg>
+                                Export High-Res Scans
+                            </h3>
+                            <div class="space-y-3">
                                 <button @click="downloadImage(results?.final, 'jpg')"
-                                    class="w-full bg-cyan-600 hover:bg-cyan-500 text-white py-3 rounded-xl font-semibold transition flex items-center justify-between px-4 group mb-3">
-                                    <span>Download JPG</span>
-                                    <span
-                                        class="text-cyan-200 text-xs bg-cyan-800 px-2 py-1 rounded group-hover:bg-cyan-700">Best
-                                        for Photos</span>
+                                    class="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white py-3.5 rounded-2xl font-bold font-heading transition-all duration-300 flex items-center justify-between px-5 shadow-lg shadow-cyan-600/10 group">
+                                    <span>Download JPG Image</span>
+                                    <span class="text-[10px] font-bold bg-cyan-950/50 border border-cyan-400/30 text-cyan-300 px-2.5 py-1 rounded-lg">High-Res</span>
                                 </button>
                                 <button @click="downloadImage(results?.final, 'png')"
-                                    class="w-full bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-semibold transition flex items-center justify-between px-4 group">
-                                    <span>Download PNG</span>
-                                    <span
-                                        class="text-slate-400 text-xs bg-slate-900 px-2 py-1 rounded group-hover:bg-slate-800">Lossless</span>
+                                    class="w-full bg-slate-900 border border-slate-800 hover:bg-slate-850 hover:border-slate-700 text-slate-100 py-3.5 rounded-2xl font-bold font-heading transition-all duration-300 flex items-center justify-between px-5 group">
+                                    <span>Download PNG File</span>
+                                    <span class="text-[10px] font-bold bg-slate-950/80 border border-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">Lossless</span>
                                 </button>
                             </div>
                         </div>
 
-                        <div class="mt-6 pt-6 border-t border-slate-700">
+                        <div class="mt-6 pt-5 border-t border-slate-800/80 flex justify-center">
                             <button @click="reset()"
-                                class="w-full text-slate-400 hover:text-white flex items-center justify-center gap-2 py-2 transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="text-sm font-semibold font-heading text-slate-400 hover:text-white flex items-center gap-2 py-2 transition duration-200">
+                                <svg class="w-4.5 h-4.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
                                         d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
                                     </path>
                                 </svg>
-                                Process New Image
+                                Analyze New Capture
                             </button>
                         </div>
                     </div>
 
-                    <!-- Metrics Side Card -->
-                    <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 shadow-xl">
-                        <h3 class="text-xl font-bold mb-4 text-white">Quality Metrics</h3>
+                    <!-- Metrics Instrumentation Dashboard -->
+                    <div class="glass-panel p-6 rounded-3xl border border-white/5 shadow-2xl bg-slate-950/20">
+                        <h3 class="text-lg font-bold font-heading mb-4 text-slate-100">Quality Index Diagnostics</h3>
+                        
                         <div class="space-y-4">
-                            <div
-                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                                <div>
-                                    <div class="text-slate-400 text-xs">UCIQE</div>
-                                    <div class="text-sm font-medium text-slate-300">Color Quality</div>
-                                </div>
-                                <div class="text-xl font-bold text-cyan-400" x-text="metrics?.UCIQE"></div>
-                            </div>
-                            <div
-                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                                <div>
-                                    <div class="text-slate-400 text-xs">Entropy</div>
-                                    <div class="text-sm font-medium text-slate-300">Details</div>
-                                </div>
-                                <div class="text-xl font-bold text-purple-400" x-text="metrics?.Entropy"></div>
-                            </div>
-                            <div
-                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                                <div>
-                                    <div class="text-slate-400 text-xs">UIQM</div>
-                                    <div class="text-sm font-medium text-slate-300">Overall</div>
-                                </div>
-                                <div class="text-xl font-bold text-emerald-400" x-text="metrics?.['UIQM (Est)']"></div>
-                            </div>
-                            <div
-                                class="flex justify-between items-center p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                                <div>
-                                    <div class="text-slate-400 text-xs">Est. Depth</div>
-                                    <div class="text-sm font-medium text-slate-300">
-                                        Confidence: <span
-                                            x-text="metrics && metrics.DepthConf ? Math.round(metrics.DepthConf * 100) + '%' : '0%'"></span>
+                            <!-- UCIQE -->
+                            <div class="p-4 bg-slate-950/30 rounded-2xl border border-slate-800/60 relative overflow-hidden group hover:border-cyan-500/30 transition-all duration-300">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-heading">Color Chromaticity</div>
+                                        <div class="text-sm font-bold font-heading text-slate-200">UCIQE Index</div>
                                     </div>
+                                    <div class="text-xl font-extrabold text-cyan-400 font-heading" x-text="metrics?.UCIQE"></div>
                                 </div>
-                                <div class="text-xl font-bold text-blue-400"
-                                    x-text="metrics && metrics.Depth ? metrics.Depth : '-'"></div>
+                                <div class="w-full bg-slate-900 rounded-full h-1 mt-2">
+                                    <div class="bg-cyan-500 h-1 rounded-full transition-all duration-500" :style="'width: ' + Math.min(100, (metrics?.UCIQE ? metrics.UCIQE * 15 : 0)) + '%'"></div>
+                                </div>
+                            </div>
+
+                            <!-- Entropy -->
+                            <div class="p-4 bg-slate-950/30 rounded-2xl border border-slate-800/60 relative overflow-hidden group hover:border-purple-500/30 transition-all duration-300">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-heading">Detail Preservation</div>
+                                        <div class="text-sm font-bold font-heading text-slate-200">Information Entropy</div>
+                                    </div>
+                                    <div class="text-xl font-extrabold text-purple-400 font-heading" x-text="metrics?.Entropy"></div>
+                                </div>
+                                <div class="w-full bg-slate-900 rounded-full h-1 mt-2">
+                                    <div class="bg-purple-500 h-1 rounded-full transition-all duration-500" :style="'width: ' + Math.min(100, (metrics?.Entropy ? metrics.Entropy * 12 : 0)) + '%'"></div>
+                                </div>
+                            </div>
+
+                            <!-- UIQM -->
+                            <div class="p-4 bg-slate-950/30 rounded-2xl border border-slate-800/60 relative overflow-hidden group hover:border-emerald-500/30 transition-all duration-300">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-heading">Sharpness & Contrast</div>
+                                        <div class="text-sm font-bold font-heading text-slate-200">UIQM Rating</div>
+                                    </div>
+                                    <div class="text-xl font-extrabold text-emerald-400 font-heading" x-text="metrics?.['UIQM (Est)']"></div>
+                                </div>
+                                <div class="w-full bg-slate-900 rounded-full h-1 mt-2">
+                                    <div class="bg-emerald-500 h-1 rounded-full transition-all duration-500" :style="'width: ' + Math.min(100, (metrics?.['UIQM (Est)'] ? metrics['UIQM (Est)'] * 25 : 0)) + '%'"></div>
+                                </div>
+                            </div>
+
+                            <!-- Depth Estimation -->
+                            <div class="p-4 bg-slate-950/30 rounded-2xl border border-slate-800/60 relative overflow-hidden group hover:border-blue-500/30 transition-all duration-300">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-heading">Estimated Proximity</div>
+                                        <div class="text-sm font-bold font-heading text-slate-200">
+                                            Depth Conf: <span class="text-[11px] font-bold text-blue-400" x-text="metrics && metrics.DepthConf ? Math.round(metrics.DepthConf * 100) + '%' : '0%'"></span>
+                                        </div>
+                                    </div>
+                                    <div class="text-lg font-extrabold text-blue-400 font-heading" x-text="metrics && metrics.Depth ? metrics.Depth : '-'"></div>
+                                </div>
+                                <div class="w-full bg-slate-900 rounded-full h-1 mt-2">
+                                    <div class="bg-blue-500 h-1 rounded-full transition-all duration-500" :style="'width: ' + Math.min(100, (metrics && metrics.DepthConf ? metrics.DepthConf * 100 : 0)) + '%'"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -605,136 +720,130 @@
             </div>
         </div>
 
-        <!-- Composition Analysis -->
-        <div class="bg-slate-800 rounded-3xl p-8 shadow-2xl border border-slate-700 mb-20"
-            x-show="results && results.composition && Object.keys(results.composition).length > 0">
-            <h2
-                class="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Scene Composition (Detected Area)
+        <!-- Composition Analysis Visualization -->
+        <div class="glass-panel rounded-3xl p-8 border border-slate-800/60 mb-16 bg-slate-950/15 shadow-2xl"
+            x-show="results && results.composition && Object.keys(results.composition).length > 0" style="display: none;">
+            <h2 class="text-2xl font-bold font-heading mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Marine Scene Composition diagnostics
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="relative h-64 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="relative h-64 w-full flex items-center justify-center">
                     <canvas id="compositionChart"></canvas>
                 </div>
-                <div class="space-y-4">
+                <div class="space-y-3">
                     <template x-for="(percent, label) in results?.composition" :key="label">
-                        <div
-                            class="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                            <span class="text-slate-300 font-medium capitalize" x-text="label"></span>
-                            <span class="text-xl font-bold text-white" x-text="percent + '%'"></span>
+                        <div class="flex items-center justify-between p-4 bg-slate-950/45 rounded-2xl border border-slate-800/50 hover:border-purple-500/20 transition duration-300">
+                            <span class="text-slate-300 font-bold font-heading capitalize" x-text="label"></span>
+                            <span class="text-xl font-black text-white font-heading" x-text="percent + '%'"></span>
                         </div>
                     </template>
                 </div>
             </div>
         </div>
 
-        <!-- Analysis Dashboard (Histograms) -->
-        <div class="bg-slate-800 rounded-3xl p-8 shadow-2xl border border-slate-700 mb-20">
-            <h2
-                class="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Color Analysis</h2>
+        <!-- Color Histograms Analysis -->
+        <div class="glass-panel rounded-3xl p-8 border border-slate-800/60 mb-16 bg-slate-950/15 shadow-2xl">
+            <h2 class="text-2xl font-bold font-heading mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Chromatic Histogram Analysis
+            </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Before Chart -->
-                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                    <h3 class="text-lg font-semibold mb-4 text-center text-slate-300">Original Distribution</h3>
+                <!-- Before Chart Card -->
+                <div class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800/60">
+                    <h3 class="text-base font-bold font-heading mb-4 text-center text-slate-300 uppercase tracking-widest">Raw Image Light Spread</h3>
                     <div class="relative h-64 w-full">
                         <canvas id="beforeChart"></canvas>
                     </div>
                 </div>
 
-                <!-- After Chart -->
-                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
-                    <h3 class="text-lg font-semibold mb-4 text-center text-slate-300">Enhanced Distribution</h3>
+                <!-- After Chart Card -->
+                <div class="bg-slate-950/40 p-5 rounded-2xl border border-slate-800/60">
+                    <h3 class="text-base font-bold font-heading mb-4 text-center text-slate-300 uppercase tracking-widest">Enhanced Target Light Spread</h3>
                     <div class="relative h-64 w-full">
                         <canvas id="afterChart"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-6 text-xs text-slate-500">
-                Click legend items to toggle channels (R, G, B, Luminance)
+            <div class="text-center mt-5 text-[11px] text-slate-500 font-heading tracking-wider">
+                LEGEND CHANNELS: RED (R) / GREEN (G) / BLUE (B) / LUMINANCE (Y) - CLICK KEY TO TOGGLE
             </div>
         </div>
 
-
-        <!-- Intermediate Steps Gallery -->
-        <div>
-            <h3 class="text-2xl font-bold mb-8">Processing Pipeline Steps</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <!-- Algorithmic Processing Gallery -->
+        <div class="mb-10">
+            <h3 class="text-2xl font-bold font-heading mb-8">Pipeline Stages Gallery</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
                 <template x-for="(step, label) in intermediateSteps" :key="label">
-                    <div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-800 cursor-pointer"
+                    <div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-950/40 border border-slate-850 hover:border-cyan-500/30 cursor-pointer shadow-xl transition-all duration-300"
                         @click="openModal('/static/images/results/' + step)">
                         <img :src="'/static/images/results/' + step"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
-                            <span class="text-sm font-medium text-white" x-text="formatLabel(label)"></span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent flex items-end p-4">
+                            <span class="text-xs font-bold font-heading text-white bg-slate-900/60 px-2.5 py-1.5 rounded-lg border border-white/5" x-text="formatLabel(label)"></span>
                         </div>
                     </div>
                 </template>
             </div>
         </div>
 
-        </div>
     </main>
 
-    <!-- Image Modal -->
-    <div x-show="modalOpen" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur"
-        @click="modalOpen = false" style="display: none;">
-        <img :src="modalImage" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl" @click.stop>
+    <!-- Full-screen Image Modal -->
+    <div x-show="modalOpen" class="fixed inset-0 z-[110] flex items-center justify-center bg-slate-950/90 backdrop-blur-md"
+        @click="modalOpen = false" style="display: none;" x-transition:enter="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
+        <img :src="modalImage" class="max-w-[90vw] max-h-[90vh] rounded-2xl shadow-2xl border border-white/10" @click.stop>
     </div>
 
-    <!-- Camera Modal -->
+    <!-- Camera Feeds Modal -->
     <div x-show="cameraOpen"
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/95 backdrop-blur"
-        style="display: none;">
-        <div
-            class="bg-black rounded-3xl overflow-hidden shadow-2xl relative max-w-2xl w-full mx-4 border border-slate-700">
-            <!-- Camera Feed -->
-            <div class="relative bg-black aspect-video flex items-center justify-center overflow-hidden">
-                <video x-ref="videoFeed" class="w-full h-full object-cover transform -scale-x-100" autoplay
-                    playsinline></video>
+        class="fixed inset-0 z-[110] flex items-center justify-center bg-slate-950/95 backdrop-blur-md"
+        style="display: none;" x-transition:enter="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="opacity-100" x-transition:leave-end="opacity-0">
+        <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl relative max-w-2xl w-full mx-4 border border-slate-700/50 bg-slate-950">
+            <!-- Feed display -->
+            <div class="relative bg-slate-950 aspect-video flex items-center justify-center overflow-hidden">
+                <video x-ref="videoFeed" class="w-full h-full object-cover transform -scale-x-100" autoplay playsinline></video>
                 <canvas x-ref="cameraCanvas" class="hidden"></canvas>
+                <!-- Scanner layout -->
+                <div class="scan-line"></div>
             </div>
 
-            <!-- Controls -->
-            <div class="p-6 bg-slate-800 flex items-center justify-between border-t border-slate-700">
-                <button @click="stopCamera()" class="text-slate-400 hover:text-white font-medium px-4 py-2 transition">
-                    Cancel
+            <!-- Controls panel -->
+            <div class="p-6 bg-slate-900 border-t border-slate-800 flex items-center justify-between">
+                <button @click="stopCamera()" class="text-slate-400 hover:text-white font-bold font-heading px-5 py-2.5 rounded-xl hover:bg-slate-800 transition">
+                    Cancel Scan
                 </button>
                 <button @click="capturePhoto()"
-                    class="bg-white text-black hover:bg-slate-200 rounded-full px-8 py-3 font-bold flex items-center gap-2 transition shadow-lg shadow-white/10 group">
-                    <div class="w-4 h-4 bg-red-500 rounded-full animate-pulse group-hover:scale-125 transition"></div>
-                    Capture Photo
+                    class="bg-cyan-500 hover:bg-cyan-400 text-white rounded-2xl px-8 py-3.5 font-bold font-heading flex items-center gap-3 transition shadow-lg shadow-cyan-500/20 group">
+                    <div class="w-3.5 h-3.5 bg-red-500 rounded-full animate-ping"></div>
+                    Capture Probe
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Toast Container -->
-    <div class="fixed top-20 right-4 z-[100] flex flex-col gap-2 pointer-events-none">
+    <!-- Interactive Toast Alerts -->
+    <div class="fixed top-24 right-4 z-[120] flex flex-col gap-3 pointer-events-none">
         <template x-for="toast in toasts" :key="toast.id">
-            <div class="pointer-events-auto px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 transition-all duration-300 transform translate-x-0"
+            <div class="pointer-events-auto px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 border backdrop-blur-lg transition-all duration-300 transform translate-x-0"
                 :class="{
-                    'bg-red-500/90 text-white': toast.type === 'error',
-                    'bg-green-500/90 text-white': toast.type === 'success',
-                    'bg-blue-500/90 text-white': toast.type === 'info'
+                    'bg-red-500/10 border-red-500/30 text-red-200': toast.type === 'error',
+                    'bg-green-500/10 border-green-500/30 text-green-200': toast.type === 'success',
+                    'bg-blue-500/10 border-blue-500/30 text-blue-200': toast.type === 'info'
                  }" x-transition:enter="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
                 x-transition:leave="translate-x-full opacity-0">
 
-                <!-- Icon -->
                 <div x-show="toast.type === 'error'">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
                             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
                 <div x-show="toast.type === 'success'">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"></path>
                     </svg>
                 </div>
-
-                <span class="font-medium text-sm" x-text="toast.message"></span>
+                <span class="font-bold text-sm font-heading" x-text="toast.message"></span>
             </div>
         </template>
     </div>

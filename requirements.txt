@@ -1,11 +1,12 @@
 flask
 numpy
-opencv-python
+opencv-python-headless
 scipy
 scikit-image
 pillow
 matplotlib
-ultralytics
 pandas
-git+https://github.com/ultralytics/CLIP.git
+# Optional dependencies (required for object detection locally, comment out on Render)
+# ultralytics
+# git+https://github.com/ultralytics/CLIP.git
 

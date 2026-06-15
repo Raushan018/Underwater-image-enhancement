@@ -2629,3 +2629,11 @@
 2026-06-15 17:29:06,956 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_5_hist_linear.jpg HTTP/1.1" 200 -
 2026-06-15 17:29:06,968 - werkzeug - INFO - 192.168.29.187 - - [15/Jun/2026 17:29:06] "GET /static/images/results/ekamelev-fish-3203507_1920_depth_color.jpg?1781524746881 HTTP/1.1" 200 -
 2026-06-15 17:29:58,628 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:29:58] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:30:28,702 - __main__ - INFO - YOLO-World model initialized successfully.
+2026-06-15 17:30:28,735 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.29.187:5001
+2026-06-15 17:30:28,735 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-06-15 17:30:28,887 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:30:28] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -
+2026-06-15 17:30:29,147 - werkzeug - INFO - 127.0.0.1 - - [15/Jun/2026 17:30:29] "[35m[1mGET /video/BackgroundVideo_trimmed.mp4 HTTP/1.1[0m" 206 -

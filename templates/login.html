@@ -12,7 +12,12 @@
 <body class="bg-slate-900 text-white font-['Inter'] antialiased flex items-center justify-center min-h-screen">
 
     <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-700 w-full max-w-md">
-        <h2 class="text-3xl font-bold mb-6 text-center text-cyan-400">Login</h2>
+        <div class="flex flex-col items-center mb-6">
+            <div class="relative w-16 h-16 flex items-center justify-center bg-white border border-cyan-500/20 rounded-full shadow-lg shadow-cyan-500/10 mb-4 p-2 overflow-hidden">
+                <img src="{{ url_for('static', filename='images/examples/logo.png') }}" class="w-full h-full object-contain rounded-full scale-[1.15]" alt="AquaVision AI Logo">
+            </div>
+            <h2 class="text-3xl font-bold text-center text-cyan-400 font-heading">Login</h2>
+        </div>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}

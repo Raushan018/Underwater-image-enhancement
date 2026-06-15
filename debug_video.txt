@@ -1,0 +1,1 @@
+serve_video: filename=BackgroundVideo_trimmed.mp4, root_path=D:\Underwater-image-enhancement, file_path=D:\Underwater-image-enhancement\static\video\BackgroundVideo_trimmed.mp4, exists=True

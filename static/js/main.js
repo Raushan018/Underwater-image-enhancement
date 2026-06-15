@@ -271,6 +271,19 @@ function app() {
             this.stopCamera();
         },
 
+        navigateToSection(sectionId) {
+            if (this.results) {
+                this.reset();
+            }
+            this.$nextTick(() => {
+                const elementId = sectionId === 'pipeline' ? 'pipeline-config-dashboard' : 'demonstration-carousel';
+                const el = document.getElementById(elementId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        },
+
         formatLabel(key) {
             return key;
         },

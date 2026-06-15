@@ -365,6 +365,55 @@ def reprocess_image():
     except Exception as e:
          return jsonify({'success': False, 'error': str(e)}), 500
 
+@app.route('/video/<path:filename>')
+def serve_video(filename):
+    import re
+    from flask import Response
+    video_dir = os.path.join(app.root_path, 'static', 'video')
+    file_path = os.path.join(video_dir, filename)
+    if not os.path.exists(file_path):
+        return "File not found", 404
+        
+    file_size = os.path.getsize(file_path)
+    range_header = request.headers.get('Range', None)
+    if not range_header:
+        return send_from_directory(video_dir, filename)
+        
+    match = re.search(r'bytes=(\d+)-(\d*)', range_header)
+    if not match:
+        return send_from_directory(video_dir, filename)
+        
+    start = int(match.group(1))
+    end = match.group(2)
+    end = int(end) if end else file_size - 1
+    
+    if start >= file_size or end >= file_size:
+        return "Requested range not satisfiable", 416
+        
+    length = end - start + 1
+    
+    def generate_bytes():
+        with open(file_path, 'rb') as f:
+            f.seek(start)
+            remaining = length
+            chunk_size = 1024 * 1024
+            while remaining > 0:
+                to_read = min(chunk_size, remaining)
+                data = f.read(to_read)
+                if not data:
+                    break
+                remaining -= len(data)
+                yield data
+
+    rv = Response(generate_bytes(),
+                  206,
+                  mimetype='video/mp4',
+                  direct_passthrough=True)
+    rv.headers.add('Content-Range', f'bytes {start}-{end}/{file_size}')
+    rv.headers.add('Accept-Ranges', 'bytes')
+    rv.headers.add('Content-Length', str(length))
+    return rv
+
 @app.route('/download/<filename>')
 def download_file(filename):
     """

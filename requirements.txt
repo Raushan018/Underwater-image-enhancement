@@ -1,12 +1,12 @@
-flask
-numpy
-opencv-python-headless
-scipy
-scikit-image
-pillow
+flask>=2.3.0
+gunicorn>=21.0.0
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-image>=0.21.0
+ultralytics>=8.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=10.0.0
 matplotlib
 pandas
-# Optional dependencies (required for object detection locally, comment out on Render)
-# ultralytics
-# git+https://github.com/ultralytics/CLIP.git
-

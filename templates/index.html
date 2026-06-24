@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaVision AI - Deep Blue Underwater Image Enhancement</title>
+    <title>AquaVision AI — Underwater Image Enhancement</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -63,8 +63,8 @@
                         <img src="{{ url_for('static', filename='images/examples/logo.png') }}"
                             class="w-full h-full object-contain rounded-full scale-[1.15]" alt="AquaVision AI Logo">
                     </div>
-                    <span class="text-4xl font-normal font-cursive text-white tracking-wide">
-                        Aquavision
+                    <span class="text-lg font-extrabold font-heading tracking-[0.18em] uppercase bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                        AquaVision
                     </span>
                 </div>
 
@@ -767,25 +767,6 @@
                                 </div>
                             </div>
 
-                            <!-- UIQM -->
-                            <div
-                                class="p-4 bg-slate-950/30 rounded-2xl border border-slate-800/60 relative overflow-hidden group hover:border-emerald-500/30 transition-all duration-300">
-                                <div class="flex justify-between items-center mb-1">
-                                    <div>
-                                        <div
-                                            class="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-heading">
-                                            Sharpness & Contrast</div>
-                                        <div class="text-sm font-bold font-heading text-slate-200">UIQM Rating</div>
-                                    </div>
-                                    <div class="text-xl font-extrabold text-emerald-400 font-heading"
-                                        x-text="metrics?.['UIQM (Est)']"></div>
-                                </div>
-                                <div class="w-full bg-slate-900 rounded-full h-1 mt-2">
-                                    <div class="bg-emerald-500 h-1 rounded-full transition-all duration-500"
-                                        :style="'width: ' + Math.min(100, (metrics?.['UIQM (Est)'] ? metrics['UIQM (Est)'] * 25 : 0)) + '%'">
-                                    </div>
-                                </div>
-                            </div>
 
                             <!-- Depth Estimation -->
                             <div
